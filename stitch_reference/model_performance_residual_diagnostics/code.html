@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#006591","outline-variant":"#3e4850","inverse-on-surface":"#2c303b","on-tertiary-container":"#4a2c00","on-surface-variant":"#bec8d2","surface-tint":"#89ceff","surface-variant":"#30353f","surface-container-low":"#171c25","secondary-fixed":"#6ffbbe","on-error":"#690005","primary-fixed-dim":"#89ceff","on-secondary":"#003824","surface-dim":"#0f131d","primary":"#89ceff","on-secondary-fixed-variant":"#005236","tertiary":"#ffb95f","tertiary-fixed":"#ffddb8","primary-fixed":"#c9e6ff","on-secondary-fixed":"#002113","error":"#ffb4ab","surface-bright":"#343944","secondary-fixed-dim":"#4edea3","inverse-surface":"#dee2f0","on-primary-container":"#003751","tertiary-container":"#d88a00","surface-container":"#1b2029","surface-container-highest":"#30353f","error-container":"#93000a","on-tertiary-fixed":"#2a1700","on-primary-fixed":"#001e2f","on-primary":"#00344d","primary-container":"#0ea5e9","on-primary-fixed-variant":"#004c6e","surface-container-high":"#252a34","on-tertiary":"#472a00","on-surface":"#dee2f0","surface":"#0f131d","on-background":"#dee2f0","background":"#0f131d","surface-container-lowest":"#090e17","outline":"#88929b","on-tertiary-fixed-variant":"#653e00","secondary-container":"#00a572","on-error-container":"#ffdad6","tertiary-fixed-dim":"#ffb95f","secondary":"#4edea3","on-secondary-container":"#00311f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{margin:"1rem","margin-md":"1.5rem","margin-lg":"2rem","space-sm":"0.5rem","gutter-md":"1rem",gutter:"0.5rem","space-xl":"1.5rem","space-2xl":"2.5rem","space-md":"0.75rem","gutter-lg":"1.5rem","space-xs":"0.25rem","space-lg":"1rem"},fontFamily:{"headline-md":["Space Grotesk"],"label-numeric-lg":["JetBrains Mono"],"headline-lg-mobile":["Space Grotesk"],"body-sm":["JetBrains Mono"],"label-technical":["JetBrains Mono"],"body-md":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"label-numeric-md":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"body-lg":["JetBrains Mono"],"display-hero":["Space Grotesk"]},fontSize:{"headline-md":["20px",{lineHeight:"26px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-numeric-lg":["20px",{lineHeight:"24px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"30px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["11px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"400"}],"label-technical":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"500"}],"body-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["16px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"500"}],"label-numeric-md":["14px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"38px",letterSpacing:"-0.03em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"52px",letterSpacing:"-0.04em",fontWeight:"700"}]}}}};</script></head><body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-outline-variant/30 select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30 bg-surface-container-low/40"><div class="flex items-center gap-space-md"><img alt="AeroSense Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VlUG4KmVqk47shz9QVrnrK4iPk2KUsZJybxHfN6F9l7jhLauxJC4QNw2qf_bvuh8xK7MxOQgobE4AQqXbFdlsFhZ8XtxfU0Iv8dXlqMGzxfmWPzugWXC5t1vD8SgvWGGKfinXhvrYGIbfiQKS5hASwkikBEB9qYumNdTPeY9OWz7IwacpGuYJB-YqWi3hdEZG3wHfN2zY8jMDj_C8kkGvyYuJ4veJ3MlIakeNdg4bN"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase leading-none">AeroSense</span><span class="font-label-technical text-label-technical text-primary tracking-widest uppercase mt-0.5">Environmental Intel</span></div></div><span class="font-label-technical text-label-technical px-1.5 py-0.5 bg-primary/10 text-primary border border-primary/30 uppercase">v4.3</span></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-technical text-label-technical uppercase tracking-wider text-outline px-space-xs">Telemetry Core</span></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-surface-container text-primary border-l-2 border-primary font-bold"><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">dashboard</span><span>Overview</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="city-intelligence" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">location_city</span><span>City Intelligence</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="pollution-analytics" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">scatter_plot</span><span>Pollution Analytics</span></a><a class="group flex items-center justify-between px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="aqi-prediction" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">auto_awesome</span><span>AQI Prediction</span></div><span class="font-label-technical text-label-technical bg-primary-container text-on-primary-container px-1 py-0.5 tracking-wider font-bold">HERO</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="data-explorer" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">dataset</span><span>Data Explorer</span></a><a aria-current="page" class="group flex items-center gap-space-md px-space-md py-2 transition-all bg-surface-container text-primary border-l-2 border-primary font-bold" data-path="model-performance" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">insights</span><span>Model Performance</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="insights" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">lightbulb</span><span>Insights</span></a></nav></div><div class="flex flex-col border-t border-outline-variant/30 bg-surface-container-lowest"><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-technical text-label-technical uppercase tracking-wider text-outline px-space-xs">Operations</span></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-surface-container text-primary font-bold"><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">tune</span><span>Settings</span></a><a class="group flex items-center justify-between px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="about-project" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">school</span><span>About Project</span></div><span class="font-label-technical text-label-technical text-tertiary bg-tertiary/10 border border-tertiary/30 px-1 py-0.5">MCA THESIS</span></a></nav><div class="m-space-sm p-space-sm bg-surface-container-low border border-outline-variant/40 flex items-center gap-space-md"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPlUoVcNbVSlLcg6DZiFZ6XXlsrEhHtVwQDeV3trQGtEGzH9YjJcz6RfG5gkFlh5P7oBOg7desqufKTtc0rrMt-OvEAg_t8zU5dYu3l2XPZhSvzwu2S7X24wtvicGNmRfFR75FT9hjzR5KP-UeUj5WROCc0fL0LZgvKaupT3rzYrwkzOcJjkVMXRC76dHnQNONSerKmJ139fy7JoALt5ahKHzWk-_xZhVtD_d2RIl"/><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface truncate font-semibold">Admin / Lead</span><span class="h-1.5 w-1.5 rounded-full bg-secondary ring-2 ring-secondary/20"></span></div><span class="font-label-technical text-label-technical text-secondary truncate flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>R Engine Online</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-dim/95 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-sm text-outline font-label-technical text-label-technical uppercase"><span class="material-symbols-outlined text-[16px] text-primary">terminal</span><span>Telemetry</span><span class="text-outline-variant">/</span><span class="text-on-surface">Console</span></div><div class="relative max-w-md w-full"><span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-3 bg-surface-container-lowest border border-outline-variant/50 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Search city, pollutant, date..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-lowest border border-outline-variant/50 h-8 px-2 gap-1.5 text-on-surface-variant hover:border-outline transition-colors cursor-pointer"><span class="material-symbols-outlined text-[15px] text-outline">calendar_today</span><span class="font-label-technical text-label-technical uppercase text-on-surface">2023-2024 Dataset</span><span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span></div><div class="flex items-center bg-surface-container-lowest border border-outline-variant/50 h-8 px-2 gap-1.5 text-on-surface-variant hover:border-outline transition-colors cursor-pointer"><span class="material-symbols-outlined text-[15px] text-outline">near_me</span><span class="font-label-technical text-label-technical uppercase text-on-surface">All Cities (5)</span><span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span></div><div class="hidden xl:flex items-center gap-1.5 px-2 h-8 bg-secondary/10 border border-secondary/30 text-secondary font-label-technical text-label-technical uppercase"><span class="w-2 h-2 rounded-full bg-secondary animate-ping mr-0.5"></span><span>R Engine Synced (75 records)</span></div><div class="hidden 2xl:flex items-center px-2 h-8 bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-technical text-label-technical uppercase gap-1"><span>MLR</span><span class="text-outline">•</span><span class="text-primary">R 4.3</span></div><button class="relative h-8 w-8 flex items-center justify-center bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-outline transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-primary rounded-full"></span></button><div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPlUoVcNbVSlLcg6DZiFZ6XXlsrEhHtVwQDeV3trQGtEGzH9YjJcz6RfG5gkFlh5P7oBOg7desqufKTtc0rrMt-OvEAg_t8zU5dYu3l2XPZhSvzwu2S7X24wtvicGNmRfFR75FT9hjzR5KP-UeUj5WROCc0fL0LZgvKaupT3rzYrwkzOcJjkVMXRC76dHnQNONSerKmJ139fy7JoALt5ahKHzWk-_xZhVtD_d2RIl"/><span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">expand_more</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Operational Console Sub-Header -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest/90 backdrop-blur-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-sm font-label-technical text-label-technical uppercase tracking-wider text-outline">
+<span class="inline-block w-2 h-2 bg-secondary"></span>
+<span>AeroSense Telemetry Engine</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold">Validation Matrix</span>
+<span class="px-1.5 py-0.2 bg-secondary/10 text-secondary text-[9px] font-bold">R 4.3.1 LM()</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase flex items-center gap-space-sm">
+        Model Performance &amp; Statistical Validation
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Residual diagnostics, Actual vs. Predicted regression evaluation, and academic data science pipeline benchmarks.
+      </p>
+</div>
+<!-- Telemetry Interactive Controls Strip -->
+<div class="flex flex-wrap items-center gap-space-xs font-label-technical text-label-technical uppercase">
+<div class="bg-surface-container-low px-space-md py-1.5 flex items-center gap-space-sm">
+<span class="text-outline">Partition:</span>
+<span class="text-primary font-bold">Test Split (20% / 15 Records)</span>
+<span class="material-symbols-outlined text-[14px] text-outline">tune</span>
+</div>
+<div class="bg-surface-container-low px-space-md py-1.5 flex items-center gap-space-sm">
+<span class="text-outline">Model Ref:</span>
+<span class="text-secondary font-bold">MLR_v1.2-PROD</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-space-md py-1.5 flex items-center gap-1.5 font-bold hover:bg-primary transition-colors cursor-pointer select-none" id="downloadBtn">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+<span>Download R Diagnostic Plots</span>
+</button>
+</div>
+</div>
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- Top ML Benchmark KPI Cards (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-md"><!-- MAE Card -->
+<div class="bg-surface-container-lowest/90 border border-outline-variant/30 p-space-md flex flex-col justify-between relative group hover:border-outline-variant/60 transition-colors shadow-sm">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Metric: MAE</span>
+</div>
+<span class="font-label-technical text-[10px] bg-secondary/10 border border-secondary/30 text-secondary px-1.5 py-0.5 font-mono">NOMINAL &lt; 5.0</span>
+</div>
+<div class="my-space-md flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-[34px] leading-none text-secondary font-bold font-mono tracking-tight">1.82</span>
+<span class="font-label-technical text-label-technical text-outline font-mono">AQI PTS</span>
+</div>
+<div class="pt-space-xs border-t border-outline-variant/20 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant text-[11px]">Calibration Status</span>
+<span class="text-secondary text-[11px] font-semibold font-mono">Ultra High Precision</span>
+</div>
+<div class="w-full bg-surface-container-highest/60 h-1 overflow-hidden rounded-full">
+<div class="bg-secondary h-full rounded-full" style="width: 36.4%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-technical text-[9px] text-outline font-mono">
+<span>Abs dev tolerance: 5.0</span>
+<span class="text-outline-variant">Δ 0.12</span>
+</div>
+</div>
+</div>
+<!-- RMSE Card -->
+<div class="bg-surface-container-lowest/90 border border-outline-variant/30 p-space-md flex flex-col justify-between relative group hover:border-outline-variant/60 transition-colors shadow-sm">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Metric: RMSE</span>
+</div>
+<span class="font-label-technical text-[10px] bg-primary/10 border border-primary/30 text-primary px-1.5 py-0.5 font-mono">LOW RESIDUAL</span>
+</div>
+<div class="my-space-md flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-[34px] leading-none text-primary font-bold font-mono tracking-tight">2.19</span>
+<span class="font-label-technical text-label-technical text-outline font-mono">AQI PTS</span>
+</div>
+<div class="pt-space-xs border-t border-outline-variant/20 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant text-[11px]">Outlier Sensitivity</span>
+<span class="text-primary text-[11px] font-semibold font-mono">Minimal Penalty</span>
+</div>
+<div class="w-full bg-surface-container-highest/60 h-1 overflow-hidden rounded-full">
+<div class="bg-primary h-full rounded-full" style="width: 28.5%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-technical text-[9px] text-outline font-mono">
+<span>Held-out evaluation n=15</span>
+<span class="text-outline-variant">σ=1.41</span>
+</div>
+</div>
+</div>
+<!-- R² Card -->
+<div class="bg-surface-container-lowest/90 border border-outline-variant/30 p-space-md flex flex-col justify-between relative group hover:border-outline-variant/60 transition-colors shadow-sm">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Metric: R² (Goodness)</span>
+</div>
+<span class="font-label-technical text-[10px] bg-secondary/10 border border-secondary/30 text-secondary px-1.5 py-0.5 font-mono">EXPLAINED 99.32%</span>
+</div>
+<div class="my-space-md flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-[34px] leading-none text-on-surface font-bold font-mono tracking-tight">0.9932</span>
+<span class="font-label-technical text-label-technical text-secondary font-mono font-bold">R-SQ</span>
+</div>
+<div class="pt-space-xs border-t border-outline-variant/20 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant text-[11px]">Explained Variance</span>
+<span class="text-on-surface text-[11px] font-semibold font-mono">99.32% of AQI Var</span>
+</div>
+<div class="w-full bg-surface-container-highest/60 h-1 overflow-hidden rounded-full">
+<div class="bg-secondary h-full rounded-full" style="width: 99.32%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-technical text-[9px] text-outline font-mono">
+<span>Multi-pollutant baseline</span>
+<span class="text-secondary">SSR/SST 0.993</span>
+</div>
+</div>
+</div>
+<!-- Adjusted R² Card -->
+<div class="bg-surface-container-lowest/90 border border-outline-variant/30 p-space-md flex flex-col justify-between relative group hover:border-outline-variant/60 transition-colors shadow-sm">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Adjusted R² &amp; ANOVA</span>
+</div>
+<span class="font-label-technical text-[10px] bg-tertiary/10 border border-tertiary/30 text-tertiary px-1.5 py-0.5 font-mono">p &lt; 2.2e-16</span>
+</div>
+<div class="my-space-md flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-[34px] leading-none text-tertiary font-bold font-mono tracking-tight">0.9921</span>
+<span class="font-label-technical text-label-technical text-outline font-mono">ADJ R²</span>
+</div>
+<div class="pt-space-xs border-t border-outline-variant/20 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant text-[11px]">F-Statistic</span>
+<span class="text-tertiary text-[11px] font-semibold font-mono">864.2 (df: 8, 66)</span>
+</div>
+<div class="w-full bg-surface-container-highest/60 h-1 overflow-hidden rounded-full">
+<div class="bg-tertiary h-full rounded-full" style="width: 99.21%;"></div>
+</div>
+<div class="flex justify-between items-center font-label-technical text-[9px] text-outline font-mono">
+<span>8 independent predictors</span>
+<span class="text-tertiary">Sig. Level 0.001</span>
+</div>
+</div>
+</div></div>
+<!-- Center Analytical Split: Scatter Plot (Left) + Workflow Pipeline (Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md">
+<!-- Center Left: Actual vs Predicted Scatter Chart (7 Cols on desktop) -->
+<div class="lg:col-span-7 bg-surface-container-low flex flex-col p-space-md border border-outline-variant/30"><!-- Panel Header Dock -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm gap-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">scatter_plot</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">Actual vs. Predicted AQI Scatter Plot</h2>
+</div>
+<div class="flex items-center gap-space-sm font-label-technical text-label-technical font-mono">
+<span class="text-outline">RSE:</span>
+<span class="text-on-surface font-bold bg-surface-container-highest/50 px-1.5 py-0.5 border border-outline-variant/30">2.14 on 66 DF</span>
+<span class="text-outline">N:</span>
+<span class="text-primary font-bold bg-primary/10 px-1.5 py-0.5 border border-primary/20">15 Holdout</span>
+</div>
+</div>
+<!-- Legend Ribbon -->
+<div class="flex items-center justify-between py-1 px-space-xs bg-surface-container-lowest/80 border-b border-outline-variant/20 text-outline font-label-technical text-[10px] uppercase font-mono">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-primary inline-block"></span> 45° Ideal Target (y = x)</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary inline-block ring-1 ring-secondary/40"></span> Test Observations (n=15)</span>
+</div>
+<span class="text-outline-variant">Confidence Band: ±1.96 RSE</span>
+</div>
+<!-- Interactive SVG Chart Area -->
+<div class="relative w-full aspect-[16/11] bg-surface-container-lowest mt-space-xs flex items-center justify-center overflow-hidden border border-outline-variant/30" id="chartContainer">
+<!-- Technical Vector Grid & Graph -->
+<svg class="w-full h-full select-none" id="scatterSvg" viewbox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bandGradient" x1="0" x2="1" y1="1" y2="0">
+<stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#4edea3" stop-opacity="0.08"></stop>
+</lineargradient>
+<pattern height="40" id="gridPattern" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1f2735" stroke-width="0.6"></path>
+</pattern>
+<filter height="160%" id="glowPrimary" width="160%" x="-30%" y="-30%">
+<fegaussianblur result="blur" stddeviation="2"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Grid Backdrop -->
+<rect fill="url(#gridPattern)" height="360" width="520" x="50" y="20"></rect>
+<!-- Inner Border for chart plot -->
+<rect fill="none" height="360" stroke="#262d3a" stroke-width="1" width="520" x="50" y="20"></rect>
+<!-- Axis Ticks & Numerical Labels (Scale: 50 to 350 AQI) -->
+<!-- Y-Axis (Predicted) -->
+<g class="font-label-technical text-[10px] fill-outline font-mono" text-anchor="end">
+<text x="42" y="384">50</text>
+<text x="42" y="324">110</text>
+<text x="42" y="264">170</text>
+<text x="42" y="204">230</text>
+<text x="42" y="144">290</text>
+<text x="42" y="84">350</text>
+</g>
+<!-- X-Axis (Actual) -->
+<g class="font-label-technical text-[10px] fill-outline font-mono" text-anchor="middle">
+<text x="50" y="398">50</text>
+<text x="154" y="398">110</text>
+<text x="258" y="398">170</text>
+<text x="362" y="398">230</text>
+<text x="466" y="398">290</text>
+<text x="570" y="398">350</text>
+</g>
+<!-- Axis Labels -->
+<text class="font-label-technical text-[10px] tracking-wider uppercase font-semibold" fill="#bec8d2" text-anchor="middle" x="310" y="414">
+      Actual Observed AQI (Validation Test Set) →
+    </text>
+<text class="font-label-technical text-[10px] tracking-wider uppercase font-semibold" fill="#bec8d2" text-anchor="middle" transform="rotate(-90)" x="-200" y="16">
+      Predicted AQI (MLR Estimates) →
+    </text>
+<!-- Confidence Interval Area (Tight Envelope around y = x) -->
+<polygon fill="url(#bandGradient)" points="50,373 570,73 570,87 50,387"></polygon>
+<!-- Ideal Fit Reference Line 45 degrees (dashed primary-container) -->
+<line opacity="0.85" stroke="#0ea5e9" stroke-dasharray="4,4" stroke-width="1.8" x1="50" x2="570" y1="380" y2="80"></line>
+<!-- Test Points Group: N=15 Points hugging the line -->
+<!-- Point 1: Bengaluru obs 12 (Actual: 62.4, Pred: 61.8) -->
+<g class="scatter-point cursor-pointer group" data-act="62.4" data-city="Bengaluru" data-obs="#01" data-pred="61.8" data-res="-0.6">
+<circle class="hover:r-7 transition-all" cx="71.5" cy="368.2" fill="#4edea3" r="5"></circle>
+<circle cx="71.5" cy="368.2" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 2: Chandigarh obs 07 (Actual: 84.0, Pred: 85.3) -->
+<g class="scatter-point cursor-pointer group" data-act="84.0" data-city="Chandigarh" data-obs="#02" data-pred="85.3" data-res="+1.3">
+<circle class="hover:r-7 transition-all" cx="108.9" cy="344.7" fill="#89ceff" r="5"></circle>
+<circle cx="108.9" cy="344.7" fill="none" opacity="0.4" r="8" stroke="#89ceff" stroke-width="1"></circle>
+</g>
+<!-- Point 3: Mumbai obs 24 (Actual: 104.2, Pred: 102.9) -->
+<g class="scatter-point cursor-pointer group" data-act="104.2" data-city="Mumbai" data-obs="#03" data-pred="102.9" data-res="-1.3">
+<circle class="hover:r-7 transition-all" cx="143.9" cy="327.1" fill="#4edea3" r="5"></circle>
+<circle cx="143.9" cy="327.1" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 4: Pune obs 18 (Actual: 126.5, Pred: 125.1) -->
+<g class="scatter-point cursor-pointer group" data-act="126.5" data-city="Pune" data-obs="#04" data-pred="125.1" data-res="-1.4">
+<circle class="hover:r-7 transition-all" cx="182.6" cy="304.9" fill="#4edea3" r="5"></circle>
+<circle cx="182.6" cy="304.9" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 5: Mumbai obs 31 (Actual: 148.0, Pred: 149.2) -->
+<g class="scatter-point cursor-pointer group" data-act="148.0" data-city="Mumbai" data-obs="#05" data-pred="149.2" data-res="+1.2">
+<circle class="hover:r-7 transition-all" cx="219.8" cy="280.8" fill="#89ceff" r="5"></circle>
+<circle cx="219.8" cy="280.8" fill="none" opacity="0.4" r="8" stroke="#89ceff" stroke-width="1"></circle>
+</g>
+<!-- Point 6: Chandigarh obs 44 (Actual: 165.2, Pred: 164.0) -->
+<g class="scatter-point cursor-pointer group" data-act="165.2" data-city="Chandigarh" data-obs="#06" data-pred="164.0" data-res="-1.2">
+<circle class="hover:r-7 transition-all" cx="249.7" cy="266.0" fill="#4edea3" r="5"></circle>
+<circle cx="249.7" cy="266.0" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 7: KEY HIGHLIGHT - Delhi obs 52 (Actual: 182.4, Pred: 181.1) -->
+<g class="scatter-point cursor-pointer group" data-act="182.4" data-city="Delhi Central" data-obs="#07" data-pred="181.1" data-res="-1.3">
+<circle class="hover:r-8 transition-all" cx="279.5" cy="248.9" fill="#ffb95f" r="6"></circle>
+<circle cx="279.5" cy="248.9" fill="none" opacity="0.7" r="11" stroke="#ffb95f" stroke-width="1.2"></circle>
+<!-- Highlight indicator vector -->
+<line stroke="#ffb95f" stroke-dasharray="2,2" stroke-width="1" x1="279.5" x2="315" y1="248.9" y2="225"></line>
+<rect fill="#1b2029" height="18" stroke="#ffb95f" stroke-width="0.8" width="85" x="315" y="215"></rect>
+<text class="font-label-technical text-[9px] font-bold font-mono" fill="#ffb95f" x="320" y="228">OBS #07: 182.4 AQI</text>
+</g>
+<!-- Point 8: Pune obs 59 (Actual: 201.0, Pred: 202.8) -->
+<g class="scatter-point cursor-pointer group" data-act="201.0" data-city="Pune" data-obs="#08" data-pred="202.8" data-res="+1.8">
+<circle class="hover:r-7 transition-all" cx="311.7" cy="227.2" fill="#89ceff" r="5"></circle>
+<circle cx="311.7" cy="227.2" fill="none" opacity="0.4" r="8" stroke="#89ceff" stroke-width="1"></circle>
+</g>
+<!-- Point 9: Delhi obs 61 (Actual: 224.6, Pred: 223.1) -->
+<g class="scatter-point cursor-pointer group" data-act="224.6" data-city="Delhi Anand" data-obs="#09" data-pred="223.1" data-res="-1.5">
+<circle class="hover:r-7 transition-all" cx="352.6" cy="206.9" fill="#4edea3" r="5"></circle>
+<circle cx="352.6" cy="206.9" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 10: Bengaluru obs 64 (Actual: 238.2, Pred: 240.0) -->
+<g class="scatter-point cursor-pointer group" data-act="238.2" data-city="Bengaluru" data-obs="#10" data-pred="240.0" data-res="+1.8">
+<circle class="hover:r-7 transition-all" cx="376.2" cy="190.0" fill="#89ceff" r="5"></circle>
+<circle cx="376.2" cy="190.0" fill="none" opacity="0.4" r="8" stroke="#89ceff" stroke-width="1"></circle>
+</g>
+<!-- Point 11: Mumbai obs 68 (Actual: 256.0, Pred: 254.2) -->
+<g class="scatter-point cursor-pointer group" data-act="256.0" data-city="Mumbai" data-obs="#11" data-pred="254.2" data-res="-1.8">
+<circle class="hover:r-7 transition-all" cx="407.1" cy="175.8" fill="#4edea3" r="5"></circle>
+<circle cx="407.1" cy="175.8" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 12: Delhi obs 70 (Actual: 278.4, Pred: 280.6) -->
+<g class="scatter-point cursor-pointer group" data-act="278.4" data-city="Delhi Rohini" data-obs="#12" data-pred="280.6" data-res="+2.2">
+<circle class="hover:r-7 transition-all" cx="445.9" cy="149.4" fill="#89ceff" r="5"></circle>
+<circle cx="445.9" cy="149.4" fill="none" opacity="0.4" r="8" stroke="#89ceff" stroke-width="1"></circle>
+</g>
+<!-- Point 13: Delhi obs 72 (Actual: 295.1, Pred: 293.0) -->
+<g class="scatter-point cursor-pointer group" data-act="295.1" data-city="Delhi RK Puram" data-obs="#13" data-pred="293.0" data-res="-2.1">
+<circle class="hover:r-7 transition-all" cx="474.8" cy="137.0" fill="#4edea3" r="5"></circle>
+<circle cx="474.8" cy="137.0" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+<!-- Point 14: Delhi obs 74 (Actual: 318.5, Pred: 320.1) -->
+<g class="scatter-point cursor-pointer group" data-act="318.5" data-city="Delhi Mundka" data-obs="#14" data-pred="320.1" data-res="+1.6">
+<circle class="hover:r-7 transition-all" cx="515.4" cy="109.9" fill="#89ceff" r="5"></circle>
+<circle cx="515.4" cy="109.9" fill="none" opacity="0.4" r="8" stroke="#89ceff" stroke-width="1"></circle>
+</g>
+<!-- Point 15: Delhi obs 75 (Actual: 339.0, Pred: 337.8) -->
+<g class="scatter-point cursor-pointer group" data-act="339.0" data-city="Delhi Anand Vihar" data-obs="#15" data-pred="337.8" data-res="-1.2">
+<circle class="hover:r-7 transition-all" cx="550.9" cy="92.2" fill="#4edea3" r="5"></circle>
+<circle cx="550.9" cy="92.2" fill="none" opacity="0.4" r="8" stroke="#4edea3" stroke-width="1"></circle>
+</g>
+</svg>
+<!-- Interactive Hover Inspector HUD -->
+<div class="absolute bottom-3 left-3 bg-surface-container-high/95 p-space-sm backdrop-blur border border-outline-variant/40 flex items-center gap-space-md shadow-lg pointer-events-none transition-all" id="inspectorHud">
+<div class="flex flex-col">
+<span class="font-label-technical text-[9px] text-outline uppercase tracking-wider font-mono">Target Inspection</span>
+<span class="font-body-sm text-body-sm font-bold text-primary font-mono" id="hudTarget">Obs #07 (Delhi Central)</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/40"></div>
+<div class="flex flex-col">
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono">Actual</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-mono" id="hudActual">182.4</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono">Predicted</span>
+<span class="font-label-numeric-md text-label-numeric-md text-secondary font-mono" id="hudPred">181.1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono">Residual</span>
+<span class="font-label-numeric-md text-label-numeric-md text-tertiary font-mono" id="hudRes">-1.3</span>
+</div>
+</div>
+</div>
+<!-- Footer Stats Bar -->
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/20 flex flex-wrap items-center justify-between text-body-sm font-body-sm text-outline-variant gap-2">
+<div class="flex items-center gap-space-sm text-on-surface-variant text-[11px]">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+<span>Heteroscedasticity Test: Breusch-Pagan p = 0.428 (Homoscedastic residuals verified)</span>
+</div>
+<span class="font-label-technical text-[10px] text-outline font-mono">DURBIN-WATSON: 1.984 (NO AUTOCORRELATION)</span>
+</div></div>
+<!-- Center Right: Academic Data Science Pipeline Flow Diagram (5 Cols on desktop) -->
+<div class="lg:col-span-5 bg-surface-container-low flex flex-col p-space-md border border-outline-variant/30"><!-- Panel Header Dock -->
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_tree</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">ML Pipeline Workflow</h2>
+</div>
+<span class="font-label-technical text-label-technical text-secondary bg-secondary/10 border border-secondary/30 px-1.5 py-0.5 font-bold uppercase font-mono">R TIDYVERSE</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline py-space-xs font-mono text-[11px]">
+  Sequential execution flow reproducible via <code class="text-primary font-label-technical bg-primary/10 px-1 py-0.5 border border-primary/20">pipeline_master.R</code>:
+</p>
+<!-- Pipeline Step Cards Container -->
+<div class="flex flex-col gap-1.5 overflow-y-auto max-h-[460px] pr-1">
+<!-- Step 1 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-primary bg-primary/10 border border-primary/30 px-1.5 py-0.5 shrink-0 font-mono">S.01</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">Dataset Ingestion</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">readr::read_csv</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        Ingested <strong class="text-on-surface font-semibold font-mono">n=75</strong> verified records across Delhi, Mumbai, Pune, Chandigarh &amp; Bengaluru stations.
+      </p>
+</div>
+</div>
+<div class="flex justify-center -my-1 text-outline-variant">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</div>
+<!-- Step 2 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/30 px-1.5 py-0.5 shrink-0 font-mono">S.02</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">Cleaning &amp; Imputation</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">tidyr / lubridate</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        Missing value imputation via median-kNN, sensor drift verification, 3-sigma outlier capping on NO₂/PM2.5.
+      </p>
+</div>
+</div>
+<div class="flex justify-center -my-1 text-outline-variant">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</div>
+<!-- Step 3 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-tertiary bg-tertiary/10 border border-tertiary/30 px-1.5 py-0.5 shrink-0 font-mono">S.03</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">Feature Selection &amp; Scaling</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">dplyr / car::vif</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        Variance Inflation Factor check (all VIF &lt; 3.8); collinearity suppression, robust standardized scaling.
+      </p>
+</div>
+</div>
+<div class="flex justify-center -my-1 text-outline-variant">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</div>
+<!-- Step 4 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-primary bg-primary/10 border border-primary/30 px-1.5 py-0.5 shrink-0 font-mono">S.04</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">80/20 Train / Test Split</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">rsample::initial_split</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        Stratified train (<span class="font-mono text-on-surface font-semibold">n=60, 80%</span>) &amp; holdout test (<span class="font-mono text-on-surface font-semibold">n=15, 20%</span>) preserves geographic pollutant distribution.
+      </p>
+</div>
+</div>
+<div class="flex justify-center -my-1 text-outline-variant">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</div>
+<!-- Step 5 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/30 px-1.5 py-0.5 shrink-0 font-mono">S.05</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">Multiple Linear Regression</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">stats::lm()</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        Parametric OLS solver fitting 8 predictor variables against composite Air Quality Index values.
+      </p>
+</div>
+</div>
+<div class="flex justify-center -my-1 text-outline-variant">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</div>
+<!-- Step 6 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-primary bg-primary/10 border border-primary/30 px-1.5 py-0.5 shrink-0 font-mono">S.06</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">Residuals &amp; OLS Diagnostics</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">plot.lm() / Q-Q</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        Residuals vs Fitted balance verification; Shapiro-Wilk W = 0.982 normality confirmation.
+      </p>
+</div>
+</div>
+<div class="flex justify-center -my-1 text-outline-variant">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</div>
+<!-- Step 7 -->
+<div class="p-space-sm bg-surface-container-lowest/80 border border-outline-variant/20 hover:border-outline-variant/50 transition-colors flex items-start gap-space-md shadow-sm">
+<span class="font-label-technical text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/30 px-1.5 py-0.5 shrink-0 font-mono">S.07</span>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-on-surface font-semibold truncate">Evaluation &amp; Verification</span>
+<span class="font-label-technical text-[9px] text-outline uppercase font-mono bg-surface-container-high/60 px-1 py-0.5">yardstick / caret</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+        MAE (1.82), RMSE (2.19), R² (0.9932) benchmarks validated against national environmental baselines.
+      </p>
+</div>
+</div>
+</div></div>
+</div>
+<!-- Bottom Section: Regression Coefficients Table (R summary(model) format) -->
+<div class="bg-surface-container-low flex flex-col p-space-md border border-outline-variant/30">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-sm gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">table_rows</span>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">Regression Coefficients Table</h2>
+<span class="font-label-technical text-label-technical text-outline font-mono">Call: lm(formula = AQI ~ PM2.5 + PM10 + NO2 + SO2 + CO + O3 + Temp + Humidity, data = train_data)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm font-label-technical text-label-technical">
+<span class="text-outline">Signif. codes:</span>
+<span class="text-secondary font-bold font-mono">0 '***' 0.001 '**' 0.01 '*' 0.05</span>
+</div>
+</div>
+<!-- High-Contrast Monospace Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-outline font-label-technical text-[10px] uppercase tracking-wider">
+<th class="py-2.5 px-space-md font-semibold">Predictor Term</th>
+<th class="py-2.5 px-space-md text-right font-semibold">Estimate (β)</th>
+<th class="py-2.5 px-space-md text-right font-semibold">Std. Error</th>
+<th class="py-2.5 px-space-md text-right font-semibold">t value</th>
+<th class="py-2.5 px-space-md text-right font-semibold">Pr(&gt;|t|)</th>
+<th class="py-2.5 px-space-md text-center font-semibold">Significance</th>
+<th class="py-2.5 px-space-md font-semibold">Feature Impact</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-label-technical text-[12px]">
+<!-- Intercept -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-on-surface font-mono">(Intercept)</td>
+<td class="py-2 px-space-md text-right font-mono text-on-surface">12.4820</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">4.1200</td>
+<td class="py-2 px-space-md text-right font-mono text-primary">3.030</td>
+<td class="py-2 px-space-md text-right font-mono text-tertiary">0.0034</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-tertiary">**</td>
+<td class="py-2 px-space-md text-outline-variant text-[11px]">Baseline Constant</td>
+</tr>
+<!-- PM2.5 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-primary font-mono">PM2.5</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+0.5840</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0420</td>
+<td class="py-2 px-space-md text-right font-mono text-primary font-bold">13.900</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary">&lt; 2e-16</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-secondary">***</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Dominant fine aerosol driver</td>
+</tr>
+<!-- PM10 -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-primary font-mono">PM10</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+0.2180</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0280</td>
+<td class="py-2 px-space-md text-right font-mono text-primary font-bold">7.780</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary">4.1e-11</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-secondary">***</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Coarse suspended particulate matter</td>
+</tr>
+<!-- NO2 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-primary font-mono">NO₂</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+1.1420</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0710</td>
+<td class="py-2 px-space-md text-right font-mono text-primary font-bold">16.080</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary">&lt; 2e-16</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-secondary">***</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Combustion emission co-index</td>
+</tr>
+<!-- SO2 -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-primary font-mono">SO₂</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+0.3120</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0840</td>
+<td class="py-2 px-space-md text-right font-mono text-primary">3.710</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary">0.0004</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-secondary">***</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Thermal power/industrial tracer</td>
+</tr>
+<!-- CO -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-primary font-mono">CO</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+3.8400</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">1.1200</td>
+<td class="py-2 px-space-md text-right font-mono text-primary">3.420</td>
+<td class="py-2 px-space-md text-right font-mono text-tertiary">0.0011</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-tertiary">**</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Localized traffic congestion proxy</td>
+</tr>
+<!-- O3 -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-primary font-mono">O₃</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+0.1850</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0520</td>
+<td class="py-2 px-space-md text-right font-mono text-primary">3.550</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary">0.0007</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-secondary">***</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Photochemical oxidant component</td>
+</tr>
+<!-- Temperature -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-outline font-mono">Temperature</td>
+<td class="py-2 px-space-md text-right font-mono text-error font-bold">-0.1420</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0680</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">-2.080</td>
+<td class="py-2 px-space-md text-right font-mono text-on-surface-variant">0.0412</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-on-surface-variant">*</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Boundary layer dispersion inversion</td>
+</tr>
+<!-- Humidity -->
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-2 px-space-md font-bold text-outline font-mono">Humidity</td>
+<td class="py-2 px-space-md text-right font-mono text-secondary font-bold">+0.0980</td>
+<td class="py-2 px-space-md text-right font-mono text-outline">0.0380</td>
+<td class="py-2 px-space-md text-right font-mono text-primary">2.570</td>
+<td class="py-2 px-space-md text-right font-mono text-on-surface-variant">0.0124</td>
+<td class="py-2 px-space-md text-center font-mono font-bold text-on-surface-variant">*</td>
+<td class="py-2 px-space-md text-on-surface-variant text-[11px]">Hygroscopic particle growth mediator</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Statistical Footer Diagnostics Output -->
+<div class="mt-space-sm p-space-sm bg-surface-container-lowest flex flex-col md:flex-row md:items-center justify-between text-body-sm font-body-sm gap-2">
+<div class="flex items-center gap-space-md text-outline font-label-technical text-[10px] uppercase">
+<span>Residual Standard Error: <strong class="text-on-surface">2.14</strong> on 66 degrees of freedom</span>
+<span>•</span>
+<span>Multiple R-squared: <strong class="text-secondary">0.9932</strong></span>
+<span>•</span>
+<span>Adjusted R-squared: <strong class="text-secondary">0.9921</strong></span>
+</div>
+<div class="flex items-center gap-space-sm text-outline font-label-technical text-[10px] uppercase">
+<span>F-statistic: <strong class="text-primary">864.2</strong> on 8 and 66 DF</span>
+<span>•</span>
+<span>p-value: <strong class="text-secondary">&lt; 2.2e-16</strong></span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Scatter Plot Interaction HUD updater
+    const points = document.querySelectorAll('.scatter-point');
+    const hudTarget = document.getElementById('hudTarget');
+    const hudActual = document.getElementById('hudActual');
+    const hudPred = document.getElementById('hudPred');
+    const hudRes = document.getElementById('hudRes');
+
+    points.forEach(point => {
+      point.addEventListener('mouseenter', () => {
+        const obs = point.dataset.obs;
+        const city = point.dataset.city;
+        const act = point.dataset.act;
+        const pred = point.dataset.pred;
+        const res = point.dataset.res;
+
+        hudTarget.textContent = `${obs} (${city})`;
+        hudActual.textContent = act;
+        hudPred.textContent = pred;
+        hudRes.textContent = res;
+        
+        // Semantic color coding on residual
+        if (parseFloat(res) > 0) {
+          hudRes.className = 'font-label-numeric-md text-label-numeric-md text-secondary';
+        } else {
+          hudRes.className = 'font-label-numeric-md text-label-numeric-md text-primary';
+        }
+      });
+    });
+
+    // Download Diagnostic plots simulated handler
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        const originalText = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[15px] animate-spin">refresh</span><span>Exporting R Graphics...</span>';
+        setTimeout(() => {
+          downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">check</span><span>PDF Generated (mlr_diagnostics.pdf)</span>';
+          setTimeout(() => {
+            downloadBtn.innerHTML = originalText;
+          }, 2400);
+        }, 800);
+      });
+    }
+  </script>
+</div></main><footer class="border-t border-outline-variant/20 bg-surface-container-lowest/80 px-space-lg py-2 flex items-center justify-between font-label-technical text-label-technical text-outline"><div class="flex items-center gap-space-lg"><span>SYSTEM: AEROSENSE CORE V4.3</span><span>LATENCY: 14MS</span><span>STATUS: OPTIMAL</span></div><div class="flex items-center gap-space-md"><span>MCA DATA SCIENCE THESIS PROJECT</span><span class="text-primary">MULTIPLE LINEAR REGRESSION RUNTIME</span></div></footer></div></body></html>

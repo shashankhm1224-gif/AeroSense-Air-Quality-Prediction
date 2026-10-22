@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#006591","outline-variant":"#3e4850","inverse-on-surface":"#2c303b","on-tertiary-container":"#4a2c00","on-surface-variant":"#bec8d2","surface-tint":"#89ceff","surface-variant":"#30353f","surface-container-low":"#171c25","secondary-fixed":"#6ffbbe","on-error":"#690005","primary-fixed-dim":"#89ceff","on-secondary":"#003824","surface-dim":"#0f131d","primary":"#89ceff","on-secondary-fixed-variant":"#005236","tertiary":"#ffb95f","tertiary-fixed":"#ffddb8","primary-fixed":"#c9e6ff","on-secondary-fixed":"#002113","error":"#ffb4ab","surface-bright":"#343944","secondary-fixed-dim":"#4edea3","inverse-surface":"#dee2f0","on-primary-container":"#003751","tertiary-container":"#d88a00","surface-container":"#1b2029","surface-container-highest":"#30353f","error-container":"#93000a","on-tertiary-fixed":"#2a1700","on-primary-fixed":"#001e2f","on-primary":"#00344d","primary-container":"#0ea5e9","on-primary-fixed-variant":"#004c6e","surface-container-high":"#252a34","on-tertiary":"#472a00","on-surface":"#dee2f0","surface":"#0f131d","on-background":"#dee2f0","background":"#0f131d","surface-container-lowest":"#090e17","outline":"#88929b","on-tertiary-fixed-variant":"#653e00","secondary-container":"#00a572","on-error-container":"#ffdad6","tertiary-fixed-dim":"#ffb95f","secondary":"#4edea3","on-secondary-container":"#00311f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{margin:"1rem","margin-md":"1.5rem","margin-lg":"2rem","space-sm":"0.5rem","gutter-md":"1rem",gutter:"0.5rem","space-xl":"1.5rem","space-2xl":"2.5rem","space-md":"0.75rem","gutter-lg":"1.5rem","space-xs":"0.25rem","space-lg":"1rem"},fontFamily:{"headline-md":["Space Grotesk"],"label-numeric-lg":["JetBrains Mono"],"headline-lg-mobile":["Space Grotesk"],"body-sm":["JetBrains Mono"],"label-technical":["JetBrains Mono"],"body-md":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"label-numeric-md":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"body-lg":["JetBrains Mono"],"display-hero":["Space Grotesk"]},fontSize:{"headline-md":["20px",{lineHeight:"26px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-numeric-lg":["20px",{lineHeight:"24px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"30px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["11px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"400"}],"label-technical":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"500"}],"body-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["16px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"500"}],"label-numeric-md":["14px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"38px",letterSpacing:"-0.03em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"52px",letterSpacing:"-0.04em",fontWeight:"700"}]}}}};</script></head><body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-outline-variant/30 select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30 bg-surface-container-low/40"><div class="flex items-center gap-space-md"><img alt="AeroSense Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VlUG4KmVqk47shz9QVrnrK4iPk2KUsZJybxHfN6F9l7jhLauxJC4QNw2qf_bvuh8xK7MxOQgobE4AQqXbFdlsFhZ8XtxfU0Iv8dXlqMGzxfmWPzugWXC5t1vD8SgvWGGKfinXhvrYGIbfiQKS5hASwkikBEB9qYumNdTPeY9OWz7IwacpGuYJB-YqWi3hdEZG3wHfN2zY8jMDj_C8kkGvyYuJ4veJ3MlIakeNdg4bN"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase leading-none">AeroSense</span><span class="font-label-technical text-label-technical text-primary tracking-widest uppercase mt-0.5">Environmental Intel</span></div></div><span class="font-label-technical text-label-technical px-1.5 py-0.5 bg-primary/10 text-primary border border-primary/30 uppercase">v4.3</span></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-technical text-label-technical uppercase tracking-wider text-outline px-space-xs">Telemetry Core</span></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-surface-container text-primary border-l-2 border-primary font-bold"><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">dashboard</span><span>Overview</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="city-intelligence" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">location_city</span><span>City Intelligence</span></a><a aria-current="page" class="group flex items-center gap-space-md px-space-md py-2 transition-all bg-surface-container text-primary border-l-2 border-primary font-bold" data-path="pollution-analytics" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">scatter_plot</span><span>Pollution Analytics</span></a><a class="group flex items-center justify-between px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="aqi-prediction" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">auto_awesome</span><span>AQI Prediction</span></div><span class="font-label-technical text-label-technical bg-primary-container text-on-primary-container px-1 py-0.5 tracking-wider font-bold">HERO</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="data-explorer" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">dataset</span><span>Data Explorer</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="model-performance" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">insights</span><span>Model Performance</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="insights" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">lightbulb</span><span>Insights</span></a></nav></div><div class="flex flex-col border-t border-outline-variant/30 bg-surface-container-lowest"><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-technical text-label-technical uppercase tracking-wider text-outline px-space-xs">Operations</span></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-surface-container text-primary font-bold"><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">tune</span><span>Settings</span></a><a class="group flex items-center justify-between px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="about-project" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">school</span><span>About Project</span></div><span class="font-label-technical text-label-technical text-tertiary bg-tertiary/10 border border-tertiary/30 px-1 py-0.5">MCA THESIS</span></a></nav><div class="m-space-sm p-space-sm bg-surface-container-low border border-outline-variant/40 flex items-center gap-space-md"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPlUoVcNbVSlLcg6DZiFZ6XXlsrEhHtVwQDeV3trQGtEGzH9YjJcz6RfG5gkFlh5P7oBOg7desqufKTtc0rrMt-OvEAg_t8zU5dYu3l2XPZhSvzwu2S7X24wtvicGNmRfFR75FT9hjzR5KP-UeUj5WROCc0fL0LZgvKaupT3rzYrwkzOcJjkVMXRC76dHnQNONSerKmJ139fy7JoALt5ahKHzWk-_xZhVtD_d2RIl"/><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface truncate font-semibold">Admin / Lead</span><span class="h-1.5 w-1.5 rounded-full bg-secondary ring-2 ring-secondary/20"></span></div><span class="font-label-technical text-label-technical text-secondary truncate flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>R Engine Online</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-dim/95 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-sm text-outline font-label-technical text-label-technical uppercase"><span class="material-symbols-outlined text-[16px] text-primary">terminal</span><span>Telemetry</span><span class="text-outline-variant">/</span><span class="text-on-surface">Console</span></div><div class="relative max-w-md w-full"><span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-3 bg-surface-container-lowest border border-outline-variant/50 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Search city, pollutant, date..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-lowest border border-outline-variant/50 h-8 px-2 gap-1.5 text-on-surface-variant hover:border-outline transition-colors cursor-pointer"><span class="material-symbols-outlined text-[15px] text-outline">calendar_today</span><span class="font-label-technical text-label-technical uppercase text-on-surface">2023-2024 Dataset</span><span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span></div><div class="flex items-center bg-surface-container-lowest border border-outline-variant/50 h-8 px-2 gap-1.5 text-on-surface-variant hover:border-outline transition-colors cursor-pointer"><span class="material-symbols-outlined text-[15px] text-outline">near_me</span><span class="font-label-technical text-label-technical uppercase text-on-surface">All Cities (5)</span><span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span></div><div class="hidden xl:flex items-center gap-1.5 px-2 h-8 bg-secondary/10 border border-secondary/30 text-secondary font-label-technical text-label-technical uppercase"><span class="w-2 h-2 rounded-full bg-secondary animate-ping mr-0.5"></span><span>R Engine Synced (75 records)</span></div><div class="hidden 2xl:flex items-center px-2 h-8 bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-technical text-label-technical uppercase gap-1"><span>MLR</span><span class="text-outline">•</span><span class="text-primary">R 4.3</span></div><button class="relative h-8 w-8 flex items-center justify-center bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-outline transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-primary rounded-full"></span></button><div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPlUoVcNbVSlLcg6DZiFZ6XXlsrEhHtVwQDeV3trQGtEGzH9YjJcz6RfG5gkFlh5P7oBOg7desqufKTtc0rrMt-OvEAg_t8zU5dYu3l2XPZhSvzwu2S7X24wtvicGNmRfFR75FT9hjzR5KP-UeUj5WROCc0fL0LZgvKaupT3rzYrwkzOcJjkVMXRC76dHnQNONSerKmJ139fy7JoALt5ahKHzWk-_xZhVtD_d2RIl"/><span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">expand_more</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Analytics Control Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between p-space-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-label-technical text-label-technical text-primary bg-primary/10 px-2 py-0.5 uppercase tracking-widest">
+          STATISTICAL COMPUTING WORKSPACE // ENV.R.4.3
+        </span>
+<span class="font-label-technical text-label-technical text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          CONFIDENCE INTERVAL: 95%
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight uppercase">
+        Pollution Analytics
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+        Multi-parameter regression scatter plots, Pearson correlation matrices, and pollutant cross-correlations across urban monitoring stations.
+      </p>
+</div>
+<!-- Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-9 px-space-md bg-surface-container-high text-on-surface hover:text-primary hover:bg-surface-container-highest transition-colors font-body-sm text-body-sm flex items-center gap-2" id="varSelectBtn">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Variable Pair: NO₂ / AQI</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="h-9 px-space-md bg-surface-container-high text-on-surface hover:text-tertiary transition-colors font-body-sm text-body-sm flex items-center gap-2" id="alphaBtn">
+<span class="material-symbols-outlined text-[16px] text-tertiary">analytics</span>
+<span>Alpha Level: <strong class="text-tertiary">α = 0.05</strong></span>
+</button>
+<button class="h-9 px-space-md bg-primary-container text-on-primary-container hover:bg-surface-tint font-body-sm text-body-sm font-semibold uppercase flex items-center gap-2 transition-all" onclick="downloadReport()">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Export R Markdown (.Rmd)</span>
+</button>
+</div>
+</div>
+<!-- Key Finding Terminal Card -->
+<div class="m-space-lg mb-0 p-space-lg bg-[#0a0e16]/90 border border-white/[0.08] relative overflow-hidden shadow-2xl backdrop-blur-md">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -left-10 -bottom-10 w-48 h-48 bg-secondary/5 rounded-full blur-[80px] pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(137,206,255,0.15)]">
+<span class="material-symbols-outlined text-[24px]">biotech</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-technical text-label-technical uppercase tracking-wider text-outline mb-1.5">
+<span class="text-on-surface-variant/80 font-semibold">Primary Regression Factor Identified</span>
+<span class="text-white/20">•</span>
+<span class="text-secondary flex items-center gap-1 font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Null Hypothesis Rejected</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight flex items-center gap-2">
+            Nitrogen Dioxide (NO₂) Dominance
+            <span class="text-[11px] font-label-technical px-2 py-0.5 rounded bg-primary/15 text-primary border border-primary/30">RANK #1</span>
+</span>
+<p class="font-body-md text-body-md text-on-surface-variant/90 max-w-2xl mt-1.5 leading-relaxed">
+            NO₂ demonstrates the highest linear collinearity with AQI across all 5 monitored urban hubs (n=75), followed closely by PM2.5 (r = +0.841). Vehicular fossil fuel combustion remains the primary driver of rapid index escalation.
+          </p>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm lg:gap-space-md bg-[#101622]/90 border border-white/[0.06] p-space-md shrink-0 shadow-inner rounded-sm">
+<div class="flex flex-col pr-2 border-r border-white/[0.06]">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Pearson (r)</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary tracking-tight font-bold drop-shadow-[0_0_12px_rgba(137,206,255,0.4)]">+0.892</span>
+<span class="font-label-technical text-label-technical text-secondary mt-1 flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-secondary"></span>Very Strong Positive</span>
+</div>
+<div class="flex flex-col pr-2 border-r border-white/[0.06]">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">t-statistic</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">16.42</span>
+<span class="font-label-technical text-label-technical text-outline-variant mt-1">df = 73 (α=0.05)</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Significance (p)</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-secondary tracking-tight font-bold drop-shadow-[0_0_12px_rgba(78,222,163,0.3)]">&lt; 0.0001</span>
+<span class="font-label-technical text-label-technical text-secondary mt-1">*** p &lt; 0.001</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Multi-Panel Regression Scatter Plots (6 Pollutants vs AQI) -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">scatter_plot</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">
+          Multivariate Ordinary Least Squares (OLS) Estimations
+        </h2>
+</div>
+<div class="flex items-center gap-space-md font-label-technical text-label-technical text-outline">
+<span class="flex items-center gap-1">
+<span class="w-3 h-0.5 bg-primary inline-block"></span> Fitted Trend Line
+        </span>
+<span class="flex items-center gap-1">
+<span class="w-3 h-2 bg-primary/20 inline-block"></span> 95% SE Interval
+        </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Plot 1: NO2 vs AQI (Top factor) -->
+<div class="bg-[#0d121c]/90 border border-white/[0.08] hover:border-primary/40 p-space-md flex flex-col relative group transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(137,206,255,0.08)]">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary uppercase font-bold tracking-tight">NO₂</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">vs AQI</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 bg-primary/10 border border-primary/20 text-primary uppercase font-semibold">
+            r = +0.89 | R² = 0.795
+          </span>
+</div>
+<div class="relative w-full h-48 bg-[#070a10] border border-white/[0.04] overflow-hidden">
+<!-- High precision coordinate grid -->
+<svg class="absolute inset-0 w-full h-full stroke-white/[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="40" y2="40"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="80" y2="80"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="120" y2="120"></line>
+<line stroke-dasharray="3,3" x1="75" x2="75" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="150" x2="150" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="225" x2="225" y1="0" y2="100%"></line>
+</svg>
+<svg class="w-full h-full p-2 relative z-10" preserveaspectratio="none" viewbox="0 0 300 160">
+<defs>
+<lineargradient id="no2Grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#89ceff" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#89ceff" stop-opacity="0.02"></stop>
+</lineargradient>
+<filter height="140%" id="glowNo2" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="0" flood-color="#89ceff" flood-opacity="0.6" stddeviation="2"></fedropshadow>
+</filter>
+</defs>
+<!-- 95% Confidence Band Polygon -->
+<polygon fill="url(#no2Grad)" points="25,145 280,30 280,18 25,135"></polygon>
+<!-- OLS Regression Line -->
+<line filter="url(#glowNo2)" stroke="#89ceff" stroke-width="2.2" x1="25" x2="280" y1="140" y2="24"></line>
+<!-- Clustered Data Points with halos -->
+<circle cx="32" cy="136" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="48" cy="128" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="65" cy="122" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="78" cy="115" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="92" cy="106" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="108" cy="99" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="120" cy="94" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="138" cy="85" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="152" cy="81" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="166" cy="72" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="180" cy="65" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="195" cy="60" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="210" cy="52" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="225" cy="46" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="240" cy="38" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="258" cy="32" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="272" cy="27" fill="#89ceff" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="140" cy="95" fill="#88929b" opacity="0.7" r="2.5"></circle>
+<circle cx="185" cy="50" fill="#88929b" opacity="0.7" r="2.5"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">μg/m³ (0 - 140)</div>
+<div class="absolute top-1 left-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">AQI (0 - 450)</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-technical text-label-technical text-outline-variant">
+<span>Slope: β₁ = +2.41 (SE 0.14)</span>
+<span class="text-secondary font-semibold">p &lt; 0.0001</span>
+</div>
+</div>
+<!-- Plot 2: PM2.5 vs AQI -->
+<div class="bg-[#0d121c]/90 border border-white/[0.08] hover:border-secondary/40 p-space-md flex flex-col relative group transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(78,222,163,0.08)]">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-secondary uppercase font-bold tracking-tight">PM2.5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">vs AQI</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 bg-secondary/10 border border-secondary/20 text-secondary uppercase font-semibold">
+            r = +0.84 | R² = 0.707
+          </span>
+</div>
+<div class="relative w-full h-48 bg-[#070a10] border border-white/[0.04] overflow-hidden">
+<svg class="absolute inset-0 w-full h-full stroke-white/[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="40" y2="40"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="80" y2="80"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="120" y2="120"></line>
+<line stroke-dasharray="3,3" x1="75" x2="75" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="150" x2="150" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="225" x2="225" y1="0" y2="100%"></line>
+</svg>
+<svg class="w-full h-full p-2 relative z-10" preserveaspectratio="none" viewbox="0 0 300 160">
+<defs>
+<lineargradient id="pm25Grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4edea3" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#4edea3" stop-opacity="0.02"></stop>
+</lineargradient>
+<filter height="140%" id="glowPm25" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="0" flood-color="#4edea3" flood-opacity="0.6" stddeviation="2"></fedropshadow>
+</filter>
+</defs>
+<polygon fill="url(#pm25Grad)" points="25,148 280,38 280,24 25,132"></polygon>
+<line filter="url(#glowPm25)" stroke="#4edea3" stroke-width="2.2" x1="25" x2="280" y1="140" y2="30"></line>
+<circle cx="35" cy="132" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="50" cy="138" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="68" cy="118" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="82" cy="112" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="98" cy="98" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="115" cy="92" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="132" cy="78" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="150" cy="85" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="170" cy="68" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="192" cy="60" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="210" cy="48" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="230" cy="42" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="248" cy="35" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="265" cy="28" fill="#4edea3" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">μg/m³ (0 - 250)</div>
+<div class="absolute top-1 left-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">AQI (0 - 450)</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-technical text-label-technical text-outline-variant">
+<span>Slope: β₁ = +1.78 (SE 0.12)</span>
+<span class="text-secondary font-semibold">p &lt; 0.0001</span>
+</div>
+</div>
+<!-- Plot 3: PM10 vs AQI -->
+<div class="bg-[#0d121c]/90 border border-white/[0.08] hover:border-white/20 p-space-md flex flex-col relative group transition-all duration-300 shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold tracking-tight">PM10</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">vs AQI</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 bg-white/5 border border-white/10 text-on-surface-variant uppercase font-semibold">
+            r = +0.79 | R² = 0.624
+          </span>
+</div>
+<div class="relative w-full h-48 bg-[#070a10] border border-white/[0.04] overflow-hidden">
+<svg class="absolute inset-0 w-full h-full stroke-white/[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="40" y2="40"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="80" y2="80"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="120" y2="120"></line>
+<line stroke-dasharray="3,3" x1="75" x2="75" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="150" x2="150" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="225" x2="225" y1="0" y2="100%"></line>
+</svg>
+<svg class="w-full h-full p-2 relative z-10" preserveaspectratio="none" viewbox="0 0 300 160">
+<polygon fill="rgba(137,206,255,0.08)" points="25,150 280,48 280,32 25,130"></polygon>
+<line stroke="#88929b" stroke-width="2" x1="25" x2="280" y1="140" y2="40"></line>
+<circle cx="30" cy="144" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="55" cy="120" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="70" cy="130" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="95" cy="105" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="120" cy="85" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="145" cy="98" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="170" cy="75" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="195" cy="62" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="220" cy="55" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="245" cy="48" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="265" cy="38" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">μg/m³ (0 - 400)</div>
+<div class="absolute top-1 left-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">AQI (0 - 450)</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-technical text-label-technical text-outline-variant">
+<span>Slope: β₁ = +0.94 (SE 0.08)</span>
+<span class="text-secondary font-semibold">p &lt; 0.0001</span>
+</div>
+</div>
+<!-- Plot 4: CO vs AQI -->
+<div class="bg-[#0d121c]/90 border border-white/[0.08] hover:border-white/20 p-space-md flex flex-col relative group transition-all duration-300 shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold tracking-tight">CO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">vs AQI</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 bg-white/5 border border-white/10 text-on-surface-variant uppercase font-semibold">
+            r = +0.64 | R² = 0.409
+          </span>
+</div>
+<div class="relative w-full h-48 bg-[#070a10] border border-white/[0.04] overflow-hidden">
+<svg class="absolute inset-0 w-full h-full stroke-white/[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="40" y2="40"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="80" y2="80"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="120" y2="120"></line>
+<line stroke-dasharray="3,3" x1="75" x2="75" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="150" x2="150" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="225" x2="225" y1="0" y2="100%"></line>
+</svg>
+<svg class="w-full h-full p-2 relative z-10" preserveaspectratio="none" viewbox="0 0 300 160">
+<polygon fill="rgba(137,206,255,0.06)" points="25,145 280,68 280,48 25,120"></polygon>
+<line stroke="#88929b" stroke-width="2" x1="25" x2="280" y1="132" y2="58"></line>
+<circle cx="35" cy="140" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="60" cy="115" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="85" cy="130" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="110" cy="100" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="130" cy="80" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="160" cy="95" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="185" cy="70" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="215" cy="64" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="240" cy="72" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="265" cy="50" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">mg/m³ (0.1 - 4.5)</div>
+<div class="absolute top-1 left-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">AQI (0 - 450)</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-technical text-label-technical text-outline-variant">
+<span>Slope: β₁ = +48.2 (SE 6.1)</span>
+<span class="text-secondary font-semibold">p = 0.0003</span>
+</div>
+</div>
+<!-- Plot 5: SO2 vs AQI -->
+<div class="bg-[#0d121c]/90 border border-white/[0.08] hover:border-tertiary/40 p-space-md flex flex-col relative group transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(255,185,95,0.08)]">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-tertiary uppercase font-bold tracking-tight">SO₂</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">vs AQI</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 bg-tertiary/10 border border-tertiary/20 text-tertiary uppercase font-semibold">
+            r = +0.58 | R² = 0.336
+          </span>
+</div>
+<div class="relative w-full h-48 bg-[#070a10] border border-white/[0.04] overflow-hidden">
+<svg class="absolute inset-0 w-full h-full stroke-white/[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="40" y2="40"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="80" y2="80"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="120" y2="120"></line>
+<line stroke-dasharray="3,3" x1="75" x2="75" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="150" x2="150" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="225" x2="225" y1="0" y2="100%"></line>
+</svg>
+<svg class="w-full h-full p-2 relative z-10" preserveaspectratio="none" viewbox="0 0 300 160">
+<defs>
+<lineargradient id="so2Grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb95f" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#ffb95f" stop-opacity="0.02"></stop>
+</lineargradient>
+<filter height="140%" id="glowSo2" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="0" flood-color="#ffb95f" flood-opacity="0.6" stddeviation="2"></fedropshadow>
+</filter>
+</defs>
+<polygon fill="url(#so2Grad)" points="25,142 280,78 280,55 25,115"></polygon>
+<line filter="url(#glowSo2)" stroke="#ffb95f" stroke-width="2.2" x1="25" x2="280" y1="128" y2="68"></line>
+<circle cx="40" cy="132" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="65" cy="120" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="90" cy="98" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="120" cy="115" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="150" cy="90" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="180" cy="82" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="210" cy="65" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="240" cy="74" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="265" cy="60" fill="#ffb95f" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">μg/m³ (0 - 80)</div>
+<div class="absolute top-1 left-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">AQI (0 - 450)</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-technical text-label-technical text-outline-variant">
+<span>Slope: β₁ = +1.32 (SE 0.22)</span>
+<span class="text-secondary font-semibold">p = 0.0012</span>
+</div>
+</div>
+<!-- Plot 6: O3 vs AQI -->
+<div class="bg-[#0d121c]/90 border border-white/[0.08] hover:border-white/20 p-space-md flex flex-col relative group transition-all duration-300 shadow-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-xs border-b border-white/[0.06]">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold tracking-tight">O₃</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">vs AQI</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 bg-white/5 border border-white/10 text-on-surface-variant uppercase font-semibold">
+            r = +0.52 | R² = 0.270
+          </span>
+</div>
+<div class="relative w-full h-48 bg-[#070a10] border border-white/[0.04] overflow-hidden">
+<svg class="absolute inset-0 w-full h-full stroke-white/[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="40" y2="40"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="80" y2="80"></line>
+<line stroke-dasharray="3,3" x1="0" x2="100%" y1="120" y2="120"></line>
+<line stroke-dasharray="3,3" x1="75" x2="75" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="150" x2="150" y1="0" y2="100%"></line>
+<line stroke-dasharray="3,3" x1="225" x2="225" y1="0" y2="100%"></line>
+</svg>
+<svg class="w-full h-full p-2 relative z-10" preserveaspectratio="none" viewbox="0 0 300 160">
+<polygon fill="rgba(136,146,155,0.06)" points="25,138 280,85 280,60 25,110"></polygon>
+<line stroke="#88929b" stroke-width="2" x1="25" x2="280" y1="124" y2="72"></line>
+<circle cx="35" cy="115" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="60" cy="135" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="85" cy="100" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="115" cy="125" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="140" cy="85" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="170" cy="98" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="205" cy="80" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="235" cy="65" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+<circle cx="260" cy="74" fill="#88929b" r="3.5" stroke="#070a10" stroke-width="1"></circle>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">μg/m³ (0 - 180)</div>
+<div class="absolute top-1 left-2 font-label-technical text-label-technical text-outline/80 bg-[#070a10]/80 px-1 py-0.5">AQI (0 - 450)</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-technical text-label-technical text-outline-variant">
+<span>Slope: β₁ = +0.68 (SE 0.16)</span>
+<span class="text-secondary font-semibold">p = 0.0045</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Comprehensive Pearson Correlation Matrix (9x9) -->
+<div class="m-space-lg mt-0 flex flex-col xl:flex-row gap-space-lg">
+<!-- Matrix Container -->
+<div class="flex-1 bg-[#0a0e16]/90 border border-white/[0.08] p-space-lg flex flex-col shadow-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-sm border-b border-white/[0.06] mb-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">grid_view</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">
+              Pearson Correlation Coefficient Matrix (9 × 9)
+            </h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80 mt-0.5">
+            Two-tailed significance test. Cell values represent r-statistic normalized between -1.0 and +1.0.
+          </span>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-1.5 font-label-technical text-label-technical text-outline shrink-0 bg-[#101622] px-2.5 py-1 border border-white/[0.06]">
+<span>-1.0</span>
+<div class="h-2.5 w-3.5 bg-error/40"></div>
+<div class="h-2.5 w-3.5 bg-[#171c25]"></div>
+<div class="h-2.5 w-3.5 bg-[#252a34]"></div>
+<div class="h-2.5 w-3.5 bg-primary/30"></div>
+<div class="h-2.5 w-3.5 bg-primary"></div>
+<div class="h-2.5 w-3.5 bg-secondary"></div>
+<span>+1.0</span>
+</div>
+</div>
+<!-- Interactive Grid Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-right font-label-technical text-label-technical border-collapse select-none border border-white/[0.06]">
+<thead>
+<tr class="bg-[#070a10] text-on-surface-variant uppercase border-b border-white/[0.08]">
+<th class="p-2.5 text-left w-20 border-r border-white/[0.06] font-semibold text-white/90">Var</th>
+<th class="p-2.5 border-r border-white/[0.04]">PM2.5</th>
+<th class="p-2.5 border-r border-white/[0.04]">PM10</th>
+<th class="p-2.5 border-r border-white/[0.04]">NO₂</th>
+<th class="p-2.5 border-r border-white/[0.04]">SO₂</th>
+<th class="p-2.5 border-r border-white/[0.04]">CO</th>
+<th class="p-2.5 border-r border-white/[0.04]">O₃</th>
+<th class="p-2.5 border-r border-white/[0.04]">TEMP</th>
+<th class="p-2.5 border-r border-white/[0.04]">HUM</th>
+<th class="p-2.5 bg-primary/15 text-primary font-bold">AQI</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/[0.04] text-on-surface font-body-sm text-body-sm">
+<!-- Row: PM2.5 -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">PM2.5</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-secondary bg-secondary/15 font-bold border-r border-white/[0.03]">+0.88</td>
+<td class="p-2 text-primary bg-primary/15 font-bold border-r border-white/[0.03]">+0.81</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.54</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.62</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.48</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.19</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.31</td>
+<td class="p-2 text-secondary font-bold bg-secondary/20">+0.84</td>
+</tr>
+<!-- Row: PM10 -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">PM10</td>
+<td class="p-2 text-secondary bg-secondary/15 font-bold border-r border-white/[0.03]">+0.88</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-primary bg-primary/10 border-r border-white/[0.03]">+0.75</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.51</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.58</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.43</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.14</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.28</td>
+<td class="p-2 text-primary font-bold bg-primary/15">+0.79</td>
+</tr>
+<!-- Row: NO2 -->
+<tr class="hover:bg-white/[0.02] transition-colors bg-primary/[0.03]">
+<td class="p-2 text-left font-bold text-primary bg-[#080c14] border-r border-white/[0.06]">NO₂</td>
+<td class="p-2 text-primary bg-primary/15 font-bold border-r border-white/[0.03]">+0.81</td>
+<td class="p-2 text-primary bg-primary/10 border-r border-white/[0.03]">+0.75</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.60</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.67</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.55</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.24</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.39</td>
+<!-- Top Factor Cell Highlighted -->
+<td class="p-2 text-on-primary bg-primary font-bold shadow-[0_0_15px_rgba(137,206,255,0.4)] ring-1 ring-primary-fixed">+0.89</td>
+</tr>
+<!-- Row: SO2 -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">SO₂</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.54</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.51</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.60</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.44</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.38</td>
+<td class="p-2 text-outline/80 border-r border-white/[0.03]">-0.08</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.22</td>
+<td class="p-2 text-primary font-semibold bg-primary/10">+0.58</td>
+</tr>
+<!-- Row: CO -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">CO</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.62</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.58</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.67</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.44</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.41</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.16</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.30</td>
+<td class="p-2 text-primary font-semibold bg-primary/15">+0.64</td>
+</tr>
+<!-- Row: O3 -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">O₃</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.48</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.43</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.55</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.38</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.41</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-tertiary bg-tertiary/15 font-bold border-r border-white/[0.03]">+0.42</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.21</td>
+<td class="p-2 text-primary font-semibold bg-primary/10">+0.52</td>
+</tr>
+<!-- Row: TEMP -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">TEMP</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.19</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.14</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.24</td>
+<td class="p-2 text-outline/80 border-r border-white/[0.03]">-0.08</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.16</td>
+<td class="p-2 text-tertiary bg-tertiary/15 font-bold border-r border-white/[0.03]">+0.42</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-error bg-error/15 font-bold border-r border-white/[0.03]">-0.52</td>
+<td class="p-2 text-error bg-error/15 font-bold">-0.22</td>
+</tr>
+<!-- Row: HUM -->
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="p-2 text-left font-bold text-on-surface bg-[#080c14] border-r border-white/[0.06]">HUM</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.31</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.28</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.39</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.22</td>
+<td class="p-2 text-on-surface-variant border-r border-white/[0.03]">+0.30</td>
+<td class="p-2 text-error bg-error/10 border-r border-white/[0.03]">-0.21</td>
+<td class="p-2 text-error bg-error/15 font-bold border-r border-white/[0.03]">-0.52</td>
+<td class="p-2 text-outline/60 bg-white/[0.02] border-r border-white/[0.03]">1.00</td>
+<td class="p-2 text-on-surface font-semibold">+0.36</td>
+</tr>
+<!-- Row: AQI -->
+<tr class="bg-primary/[0.08] hover:bg-primary/15 transition-colors font-bold">
+<td class="p-2 text-left font-bold text-primary bg-[#080c14] border-r border-white/[0.06]">AQI</td>
+<td class="p-2 text-secondary font-bold border-r border-white/[0.03]">+0.84</td>
+<td class="p-2 text-primary font-bold border-r border-white/[0.03]">+0.79</td>
+<td class="p-2 text-primary font-bold bg-primary/25 border-r border-white/[0.03]">+0.89</td>
+<td class="p-2 text-primary font-semibold border-r border-white/[0.03]">+0.58</td>
+<td class="p-2 text-primary font-semibold border-r border-white/[0.03]">+0.64</td>
+<td class="p-2 text-primary font-semibold border-r border-white/[0.03]">+0.52</td>
+<td class="p-2 text-error font-bold border-r border-white/[0.03]">-0.22</td>
+<td class="p-2 text-on-surface font-semibold border-r border-white/[0.03]">+0.36</td>
+<td class="p-2 text-outline/60 bg-white/[0.02]">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Methodology & Mathematical Telemetry Panel -->
+<div class="w-full xl:w-96 flex flex-col gap-space-md">
+<!-- Methodology Card -->
+<div class="bg-[#0a0e16]/90 border border-white/[0.08] p-space-md flex flex-col shadow-xl">
+<div class="flex items-center gap-2 pb-space-sm border-b border-white/[0.06]">
+<span class="material-symbols-outlined text-[16px] text-tertiary">code</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">R Pipeline Architecture</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/90 mt-3 leading-relaxed">
+          Aggregations produced using <code class="text-primary font-label-technical bg-primary/10 px-1 py-0.5">dplyr::summarise()</code> and tidy pivots via <code class="text-primary font-label-technical bg-primary/10 px-1 py-0.5">tidyr::pivot_longer()</code>. Visual regressions rendered via <code class="text-secondary font-label-technical bg-secondary/10 px-1 py-0.5">ggplot2::geom_smooth(method="lm", se=TRUE, level=0.95)</code> across 75 validated sensor telemetry blocks.
+        </p>
+<div class="mt-4 p-space-sm bg-[#06090f] border border-white/[0.05] font-label-technical text-label-technical text-on-surface-variant flex flex-col gap-1.5">
+<div class="flex justify-between items-center py-0.5 border-b border-white/[0.03]">
+<span class="text-outline">R Core:</span>
+<span class="text-primary font-semibold">v4.3.2 (x86_64-apple-darwin20)</span>
+</div>
+<div class="flex justify-between items-center py-0.5 border-b border-white/[0.03]">
+<span class="text-outline">Matrix Algorithm:</span>
+<span>stats::cor(use = "pairwise")</span>
+</div>
+<div class="flex justify-between items-center py-0.5 border-b border-white/[0.03]">
+<span class="text-outline">Observations:</span>
+<span class="text-white/90">n = 75 (df = 73)</span>
+</div>
+<div class="flex justify-between items-center py-0.5">
+<span class="text-outline">Multicollinearity (VIF):</span>
+<span class="text-tertiary font-semibold">NO₂ = 4.12, PM2.5 = 3.88</span>
+</div>
+</div>
+</div>
+<!-- Critical Hypotheses & Statistical Insights -->
+<div class="bg-[#0a0e16]/90 border border-white/[0.08] p-space-md flex flex-col flex-1 shadow-xl">
+<div class="flex items-center gap-2 pb-space-sm border-b border-white/[0.06]">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">Key Inferential Takeaways</h4>
+</div>
+<ul class="flex flex-col gap-space-sm mt-3 font-body-sm text-body-sm text-on-surface-variant/90">
+<li class="flex items-start gap-2.5 p-2 bg-white/[0.02] border border-white/[0.03]">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong class="text-on-surface font-semibold">Thermal Inversion Dampening:</strong> Temperature exhibits a statistically significant negative correlation (r = -0.22) with ground-level AQI, indicating seasonal particulate stagnation in cooler winter matrices.</span>
+</li>
+<li class="flex items-start gap-2.5 p-2 bg-white/[0.02] border border-white/[0.03]">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">check_circle</span>
+<span><strong class="text-on-surface font-semibold">Particulate Co-Dependency:</strong> Extremely tight correlation between PM2.5 and PM10 (r = +0.88) verifies uniform particulate source emission footprints (construction dust and exhaust).</span>
+</li>
+<li class="flex items-start gap-2.5 p-2 bg-white/[0.02] border border-white/[0.03]">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5">check_circle</span>
+<span><strong class="text-on-surface font-semibold">Photochemical Divergence:</strong> Ground Ozone (O₃) displays positive alignment with ambient temperature (r = +0.42), conforming with expected solar UV radiation catalysis kinetics.</span>
+</li>
+</ul>
+<div class="mt-auto pt-4 flex items-center justify-between font-label-technical text-label-technical text-outline/80 border-t border-white/[0.04]">
+<span>THESIS REF: MCA-DS-2024-C3</span>
+<span class="text-secondary font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>PEER-REVIEW: APPROVED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    function downloadReport() {
+      const btn = event.currentTarget;
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Compiling Knitr Document...</span>';
+      btn.classList.add('opacity-75');
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">done</span><span>Report Exported (.Rmd)</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('opacity-75');
+        }, 2000);
+      }, 900);
+    }
+
+    const alphaBtn = document.getElementById('alphaBtn');
+    if (alphaBtn) {
+      let alphas = ['α = 0.05', 'α = 0.01', 'α = 0.001'];
+      let idx = 0;
+      alphaBtn.addEventListener('click', () => {
+        idx = (idx + 1) % alphas.length;
+        alphaBtn.querySelector('strong').textContent = alphas[idx];
+      });
+    }
+  </script>
+</div></main><footer class="border-t border-outline-variant/20 bg-surface-container-lowest/80 px-space-lg py-2 flex items-center justify-between font-label-technical text-label-technical text-outline"><div class="flex items-center gap-space-lg"><span>SYSTEM: AEROSENSE CORE V4.3</span><span>LATENCY: 14MS</span><span>STATUS: OPTIMAL</span></div><div class="flex items-center gap-space-md"><span>MCA DATA SCIENCE THESIS PROJECT</span><span class="text-primary">MULTIPLE LINEAR REGRESSION RUNTIME</span></div></footer></div></body></html>

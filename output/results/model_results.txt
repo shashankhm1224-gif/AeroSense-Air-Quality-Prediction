@@ -1,0 +1,6 @@
+Model name: Multiple Linear Regression
+Training rows: 60
+Testing rows: 15
+MAE: 1.8232
+RMSE: 2.1948
+R-squared: 0.9932

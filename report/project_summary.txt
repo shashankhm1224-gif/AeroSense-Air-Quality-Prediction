@@ -1,0 +1,58 @@
+Project Title: Air Quality Analysis & Prediction
+
+Problem Statement:
+This project analyzes air-quality data from multiple cities and studies how pollutants and environmental conditions influence AQI. The aim is to clean the data, explore patterns, visualize trends, and build a simple prediction model using regression.
+
+Objectives:
+- Load and inspect air-quality data.
+- Clean, preprocess, and validate the dataset.
+- Analyze descriptive statistics and AQI trends.
+- Study pollutant correlations with AQI.
+- Generate visualizations.
+- Train a regression model to predict AQI.
+- Evaluate model performance.
+- Save results and plots.
+
+Methodology:
+The project uses a sample air-quality dataset generated locally for academic demonstration. Data preprocessing includes conversion to proper types, handling missing values with median imputation, removing duplicates, and validating AQI values. A Multiple Linear Regression model is trained on 80% of the data and evaluated on the remaining 20%.
+
+Dataset Details:
+The dataset contains sample air-quality records for Delhi, Mumbai, Pune, Chandigarh, and Bengaluru. It includes pollutant concentrations and environmental variables such as PM2.5, PM10, NO2, SO2, CO, O3, Temperature, Humidity, and AQI. The data is sample data only and is generated for educational purposes.
+
+Data Preprocessing:
+- Read CSV file
+- Check column names and dataset dimensions
+- Handle missing values
+- Convert date and numeric columns
+- Remove duplicates
+- Validate AQI range
+- Retain clean rows for analysis
+
+EDA:
+Exploratory data analysis includes descriptive statistics, city-level AQI comparisons, temporal AQI patterns, and AQI category classification.
+
+Visualization:
+The project creates visualizations including AQI trends, city-wise averages, pollutant relationships, category distribution, seasonal patterns, and correlation heatmaps.
+
+ML Model:
+Model: Multiple Linear Regression
+Predictor variables: PM2.5, PM10, NO2, SO2, CO, O3, Temperature, Humidity
+Target variable: AQI
+
+Evaluation Metrics:
+- Mean Absolute Error (MAE)
+- Root Mean Square Error (RMSE)
+- R-squared
+
+Key Findings:
+The dataset demonstrates that AQI is strongly influenced by pollutant levels such as PM2.5 and PM10, and the model is able to estimate AQI using these environmental and pollution features.
+
+Future Scope:
+- Add larger real datasets
+- Compare additional regression models
+- Build a dashboard
+- Add time-series forecasting
+- Improve model features and validation
+
+Note:
+This is sample/generated academic data, not live environmental monitoring data.

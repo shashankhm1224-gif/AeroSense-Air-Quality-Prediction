@@ -1,0 +1,8 @@
+# R Packages required for the Air Quality Analysis & Prediction project
+# Install in R or RStudio using the following commands:
+
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("tidyr")
+install.packages("readr")
+install.packages("lubridate")

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-primary":"#006591","outline-variant":"#3e4850","inverse-on-surface":"#2c303b","on-tertiary-container":"#4a2c00","on-surface-variant":"#bec8d2","surface-tint":"#89ceff","surface-variant":"#30353f","surface-container-low":"#171c25","secondary-fixed":"#6ffbbe","on-error":"#690005","primary-fixed-dim":"#89ceff","on-secondary":"#003824","surface-dim":"#0f131d","primary":"#89ceff","on-secondary-fixed-variant":"#005236","tertiary":"#ffb95f","tertiary-fixed":"#ffddb8","primary-fixed":"#c9e6ff","on-secondary-fixed":"#002113","error":"#ffb4ab","surface-bright":"#343944","secondary-fixed-dim":"#4edea3","inverse-surface":"#dee2f0","on-primary-container":"#003751","tertiary-container":"#d88a00","surface-container":"#1b2029","surface-container-highest":"#30353f","error-container":"#93000a","on-tertiary-fixed":"#2a1700","on-primary-fixed":"#001e2f","on-primary":"#00344d","primary-container":"#0ea5e9","on-primary-fixed-variant":"#004c6e","surface-container-high":"#252a34","on-tertiary":"#472a00","on-surface":"#dee2f0","surface":"#0f131d","on-background":"#dee2f0","background":"#0f131d","surface-container-lowest":"#090e17","outline":"#88929b","on-tertiary-fixed-variant":"#653e00","secondary-container":"#00a572","on-error-container":"#ffdad6","tertiary-fixed-dim":"#ffb95f","secondary":"#4edea3","on-secondary-container":"#00311f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{margin:"1rem","margin-md":"1.5rem","margin-lg":"2rem","space-sm":"0.5rem","gutter-md":"1rem",gutter:"0.5rem","space-xl":"1.5rem","space-2xl":"2.5rem","space-md":"0.75rem","gutter-lg":"1.5rem","space-xs":"0.25rem","space-lg":"1rem"},fontFamily:{"headline-md":["Space Grotesk"],"label-numeric-lg":["JetBrains Mono"],"headline-lg-mobile":["Space Grotesk"],"body-sm":["JetBrains Mono"],"label-technical":["JetBrains Mono"],"body-md":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"label-numeric-md":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"body-lg":["JetBrains Mono"],"display-hero":["Space Grotesk"]},fontSize:{"headline-md":["20px",{lineHeight:"26px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-numeric-lg":["20px",{lineHeight:"24px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"30px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["11px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"400"}],"label-technical":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"500"}],"body-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["16px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"500"}],"label-numeric-md":["14px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"38px",letterSpacing:"-0.03em",fontWeight:"600"}],"body-lg":["14px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"400"}],"display-hero":["48px",{lineHeight:"52px",letterSpacing:"-0.04em",fontWeight:"700"}]}}}};</script><style>
+  input[type=range] {
+    -webkit-appearance: none;
+    background: rgba(49, 53, 62, 0.45);
+    border-radius: 9999px;
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #89ceff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(137, 206, 255, 0.8), 0 0 2px rgba(255, 255, 255, 0.9);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.25);
+    box-shadow: 0 0 14px rgba(137, 206, 255, 1);
+  }
+  .feature-box {
+    background: linear-gradient(180deg, rgba(28, 32, 40, 0.6) 0%, rgba(20, 24, 32, 0.85) 100%);
+    border: 1px solid rgba(62, 72, 80, 0.35);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .feature-box:hover {
+    border-color: rgba(137, 206, 255, 0.4);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(137, 206, 255, 0.15);
+  }
+  .hero-glass-card {
+    background: radial-gradient(100% 100% at 50% 0%, rgba(28, 32, 42, 0.95) 0%, rgba(14, 18, 26, 0.98) 100%);
+    border: 1px solid rgba(137, 206, 255, 0.2);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  .terminal-card {
+    background: rgba(16, 20, 28, 0.85);
+    border: 1px solid rgba(62, 72, 80, 0.3);
+    backdrop-filter: blur(12px);
+  }
+</style></head><body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-outline-variant/30 select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30 bg-surface-container-low/40"><div class="flex items-center gap-space-md"><img alt="AeroSense Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VlUG4KmVqk47shz9QVrnrK4iPk2KUsZJybxHfN6F9l7jhLauxJC4QNw2qf_bvuh8xK7MxOQgobE4AQqXbFdlsFhZ8XtxfU0Iv8dXlqMGzxfmWPzugWXC5t1vD8SgvWGGKfinXhvrYGIbfiQKS5hASwkikBEB9qYumNdTPeY9OWz7IwacpGuYJB-YqWi3hdEZG3wHfN2zY8jMDj_C8kkGvyYuJ4veJ3MlIakeNdg4bN"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase leading-none">AeroSense</span><span class="font-label-technical text-label-technical text-primary tracking-widest uppercase mt-0.5">Environmental Intel</span></div></div><span class="font-label-technical text-label-technical px-1.5 py-0.5 bg-primary/10 text-primary border border-primary/30 uppercase">v4.3</span></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-technical text-label-technical uppercase tracking-wider text-outline px-space-xs">Telemetry Core</span></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-surface-container text-primary border-l-2 border-primary font-bold"><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">dashboard</span><span>Overview</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="city-intelligence" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">location_city</span><span>City Intelligence</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="pollution-analytics" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">scatter_plot</span><span>Pollution Analytics</span></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-2 transition-all bg-surface-container text-primary border-l-2 border-primary font-bold" data-path="aqi-prediction" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">auto_awesome</span><span>AQI Prediction</span></div><span class="font-label-technical text-label-technical bg-primary-container text-on-primary-container px-1 py-0.5 tracking-wider font-bold">HERO</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="data-explorer" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">dataset</span><span>Data Explorer</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="model-performance" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">insights</span><span>Model Performance</span></a><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="insights" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">lightbulb</span><span>Insights</span></a></nav></div><div class="flex flex-col border-t border-outline-variant/30 bg-surface-container-lowest"><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-technical text-label-technical uppercase tracking-wider text-outline px-space-xs">Operations</span></div><nav class="flex flex-col px-space-xs gap-0.5" data-active-classes="bg-surface-container text-primary font-bold"><a class="group flex items-center gap-space-md px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">tune</span><span>Settings</span></a><a class="group flex items-center justify-between px-space-md py-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="about-project" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px] text-outline group-hover:text-primary transition-colors">school</span><span>About Project</span></div><span class="font-label-technical text-label-technical text-tertiary bg-tertiary/10 border border-tertiary/30 px-1 py-0.5">MCA THESIS</span></a></nav><div class="m-space-sm p-space-sm bg-surface-container-low border border-outline-variant/40 flex items-center gap-space-md"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPlUoVcNbVSlLcg6DZiFZ6XXlsrEhHtVwQDeV3trQGtEGzH9YjJcz6RfG5gkFlh5P7oBOg7desqufKTtc0rrMt-OvEAg_t8zU5dYu3l2XPZhSvzwu2S7X24wtvicGNmRfFR75FT9hjzR5KP-UeUj5WROCc0fL0LZgvKaupT3rzYrwkzOcJjkVMXRC76dHnQNONSerKmJ139fy7JoALt5ahKHzWk-_xZhVtD_d2RIl"/><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface truncate font-semibold">Admin / Lead</span><span class="h-1.5 w-1.5 rounded-full bg-secondary ring-2 ring-secondary/20"></span></div><span class="font-label-technical text-label-technical text-secondary truncate flex items-center gap-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>R Engine Online</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-dim/95 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-sm text-outline font-label-technical text-label-technical uppercase"><span class="material-symbols-outlined text-[16px] text-primary">terminal</span><span>Telemetry</span><span class="text-outline-variant">/</span><span class="text-on-surface">Console</span></div><div class="relative max-w-md w-full"><span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-3 bg-surface-container-lowest border border-outline-variant/50 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Search city, pollutant, date..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-lowest border border-outline-variant/50 h-8 px-2 gap-1.5 text-on-surface-variant hover:border-outline transition-colors cursor-pointer"><span class="material-symbols-outlined text-[15px] text-outline">calendar_today</span><span class="font-label-technical text-label-technical uppercase text-on-surface">2023-2024 Dataset</span><span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span></div><div class="flex items-center bg-surface-container-lowest border border-outline-variant/50 h-8 px-2 gap-1.5 text-on-surface-variant hover:border-outline transition-colors cursor-pointer"><span class="material-symbols-outlined text-[15px] text-outline">near_me</span><span class="font-label-technical text-label-technical uppercase text-on-surface">All Cities (5)</span><span class="material-symbols-outlined text-[14px] text-outline">arrow_drop_down</span></div><div class="hidden xl:flex items-center gap-1.5 px-2 h-8 bg-secondary/10 border border-secondary/30 text-secondary font-label-technical text-label-technical uppercase"><span class="w-2 h-2 rounded-full bg-secondary animate-ping mr-0.5"></span><span>R Engine Synced (75 records)</span></div><div class="hidden 2xl:flex items-center px-2 h-8 bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-technical text-label-technical uppercase gap-1"><span>MLR</span><span class="text-outline">•</span><span class="text-primary">R 4.3</span></div><button class="relative h-8 w-8 flex items-center justify-center bg-surface-container-lowest border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-outline transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-primary rounded-full"></span></button><div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPlUoVcNbVSlLcg6DZiFZ6XXlsrEhHtVwQDeV3trQGtEGzH9YjJcz6RfG5gkFlh5P7oBOg7desqufKTtc0rrMt-OvEAg_t8zU5dYu3l2XPZhSvzwu2S7X24wtvicGNmRfFR75FT9hjzR5KP-UeUj5WROCc0fL0LZgvKaupT3rzYrwkzOcJjkVMXRC76dHnQNONSerKmJ139fy7JoALt5ahKHzWk-_xZhVtD_d2RIl"/><span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">expand_more</span></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Telemetry Sub-Header & Metadata Strip -->
+<div class="px-space-lg py-3.5 bg-surface-container-lowest/90 border-b border-outline-variant/30 backdrop-blur-md flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-technical text-label-technical px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/25 font-semibold tracking-wider">MODULE://INFERENCE-CORE</span>
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">AQI Prediction Engine</span>
+<span class="font-label-technical text-label-technical px-2 py-0.5 rounded bg-secondary-container text-surface-container-lowest font-bold tracking-wider shadow-sm">LIVE R-MLR</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/90 max-w-4xl tracking-tight">
+        Predict atmospheric air quality index using pollutant concentrations and ambient meteorological features via Multiple Linear Regression (Ordinary Least Squares).
+      </p>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<div class="px-3 py-1.5 rounded bg-surface-container/80 border border-outline-variant/30 flex items-center gap-2 font-label-technical text-label-technical text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_#4edea3]"></span>
+<span class="text-on-surface font-semibold">TRAIN 80% (n=60)</span>
+</div>
+<div class="px-3 py-1.5 rounded bg-surface-container/80 border border-outline-variant/30 flex items-center gap-2 font-label-technical text-label-technical text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#89ceff]"></span>
+<span class="text-on-surface font-semibold">VAL 20% (n=15)</span>
+</div>
+<div class="px-3 py-1.5 rounded bg-primary-container/20 border border-primary/40 text-primary flex items-center gap-2 font-label-technical text-label-technical font-bold shadow-sm">
+<span class="material-symbols-outlined text-[15px]">query_stats</span>
+<span>R² = 0.9932 • p &lt; 0.001</span>
+</div>
+</div>
+</div>
+<!-- Main 12-Column Technical Layout -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter-md">
+<!-- LEFT COLUMN: Input Matrix & Presets (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Preset Controller Strip -->
+<div class="terminal-card rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-technical text-label-technical text-outline uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px] text-primary">bolt</span>
+<span class="text-on-surface font-semibold">Climatic Presets &amp; Empirical Calibrations</span>
+</div>
+<span class="font-label-technical text-label-technical text-outline-variant font-mono">INSPECTION VECTORS: 8 PARAMETERS</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<button class="preset-btn px-3 py-2 bg-surface-container-high/60 hover:bg-surface-container-highest border border-outline-variant/30 hover:border-tertiary/50 rounded text-left flex flex-col transition-all group active:scale-[0.98]" id="preset-delhi" type="button">
+<span class="font-label-technical text-label-technical text-tertiary uppercase flex items-center gap-1.5 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary shadow-[0_0_6px_#ffb95f]"></span>Delhi Winter
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">High PM2.5 / Smog</span>
+</button>
+<button class="preset-btn px-3 py-2 bg-surface-container-high/60 hover:bg-surface-container-highest border border-outline-variant/30 hover:border-secondary/50 rounded text-left flex flex-col transition-all group active:scale-[0.98]" id="preset-blr" type="button">
+<span class="font-label-technical text-label-technical text-secondary uppercase flex items-center gap-1.5 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_#4edea3]"></span>Bengaluru Rain
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Low PM2.5 / Nominal</span>
+</button>
+<button class="preset-btn px-3 py-2 bg-surface-container-high/60 hover:bg-surface-container-highest border border-outline-variant/30 hover:border-primary/50 rounded text-left flex flex-col transition-all group active:scale-[0.98]" id="preset-mum" type="button">
+<span class="font-label-technical text-label-technical text-primary uppercase flex items-center gap-1.5 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_6px_#89ceff]"></span>Mumbai Coast
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">High Humidity maritime</span>
+</button>
+<button class="preset-btn px-3 py-2 bg-surface-container-high/60 hover:bg-surface-container-highest border border-outline-variant/30 hover:border-outline rounded text-left flex flex-col transition-all group active:scale-[0.98]" id="preset-reset" type="button">
+<span class="font-label-technical text-label-technical text-on-surface uppercase flex items-center gap-1.5 font-bold">
+<span class="material-symbols-outlined text-[13px] text-outline group-hover:rotate-180 transition-transform">restart_alt</span>Dataset Mean
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Mean (n=75 sample)</span>
+</button>
+</div>
+</div>
+<!-- Feature Matrix Configuration Form -->
+<div class="terminal-card rounded-lg p-space-lg flex flex-col gap-space-lg shadow-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold tracking-tight">Environmental Feature Matrix</span>
+<span class="font-label-technical text-label-technical text-outline font-mono">// INPUT ARRAY</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1 rounded border border-outline-variant/40">
+<label class="font-label-technical text-label-technical text-outline uppercase tracking-wider" for="city-select">City:</label>
+<select class="bg-transparent font-body-sm text-body-sm text-primary font-semibold focus:outline-none cursor-pointer pr-1" id="city-select">
+<option class="bg-surface-container text-on-surface" selected="" value="Delhi">Delhi (NCR Baseline)</option>
+<option class="bg-surface-container text-on-surface" value="Mumbai">Mumbai (Coastal Zone)</option>
+<option class="bg-surface-container text-on-surface" value="Pune">Pune (Plateau)</option>
+<option class="bg-surface-container text-on-surface" value="Chandigarh">Chandigarh (Foothills)</option>
+<option class="bg-surface-container text-on-surface" value="Bengaluru">Bengaluru (Highland)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- 1. PM2.5 -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">PM2.5</span>
+<span class="font-body-sm text-body-sm text-outline">Fine Particulate</span>
+</div>
+<span class="font-label-technical text-label-technical text-tertiary px-1.5 py-0.5 rounded bg-tertiary/10 border border-tertiary/20 font-mono">µg/m³</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-pm25" max="250" min="10" step="0.5" type="range" value="92.5"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-pm25" max="250" min="10" step="0.5" type="number" value="92.5"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 10.0</span>
+<span class="text-tertiary font-medium">PRIMARY WEIGHT [BETA: 0.92]</span>
+<span>MAX: 250.0</span>
+</div>
+</div>
+<!-- 2. PM10 -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">PM10</span>
+<span class="font-body-sm text-body-sm text-outline">Coarse Particulate</span>
+</div>
+<span class="font-label-technical text-label-technical text-tertiary px-1.5 py-0.5 rounded bg-tertiary/10 border border-tertiary/20 font-mono">µg/m³</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-pm10" max="400" min="20" step="1.0" type="range" value="178.0"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-pm10" max="400" min="20" step="1.0" type="number" value="178.0"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 20.0</span>
+<span class="text-outline font-medium">BETA: 0.44</span>
+<span>MAX: 400.0</span>
+</div>
+</div>
+<!-- 3. NO2 -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">NO₂</span>
+<span class="font-body-sm text-body-sm text-outline">Nitrogen Dioxide</span>
+<span class="font-label-technical text-label-technical px-1.5 py-0.5 rounded bg-error-container/80 text-on-error-container font-bold border border-error/40">KEY DRIVER</span>
+</div>
+<span class="font-label-technical text-label-technical text-secondary px-1.5 py-0.5 rounded bg-secondary/10 border border-secondary/20 font-mono">ppb</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-no2" max="120" min="5" step="0.2" type="range" value="54.2"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-no2" max="120" min="5" step="0.2" type="number" value="54.2"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 5.0</span>
+<span class="text-error font-semibold">STRONGEST EFFECT [BETA: 1.48]</span>
+<span>MAX: 120.0</span>
+</div>
+</div>
+<!-- 4. SO2 -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">SO₂</span>
+<span class="font-body-sm text-body-sm text-outline">Sulfur Dioxide</span>
+</div>
+<span class="font-label-technical text-label-technical text-secondary px-1.5 py-0.5 rounded bg-secondary/10 border border-secondary/20 font-mono">ppb</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-so2" max="80" min="2" step="0.1" type="range" value="19.5"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-so2" max="80" min="2" step="0.1" type="number" value="19.5"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 2.0</span>
+<span class="text-outline font-medium">BETA: 0.19</span>
+<span>MAX: 80.0</span>
+</div>
+</div>
+<!-- 5. CO -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">CO</span>
+<span class="font-body-sm text-body-sm text-outline">Carbon Monoxide</span>
+</div>
+<span class="font-label-technical text-label-technical text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 font-mono">ppm</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-co" max="5.0" min="0.1" step="0.05" type="range" value="1.65"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-co" max="5.0" min="0.1" step="0.05" type="number" value="1.65"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 0.10</span>
+<span class="text-outline font-medium">BETA: 0.35</span>
+<span>MAX: 5.00</span>
+</div>
+</div>
+<!-- 6. O3 -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">O₃</span>
+<span class="font-body-sm text-body-sm text-outline">Tropospheric Ozone</span>
+</div>
+<span class="font-label-technical text-label-technical text-secondary px-1.5 py-0.5 rounded bg-secondary/10 border border-secondary/20 font-mono">ppb</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-o3" max="100" min="5" step="0.5" type="range" value="41.0"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-o3" max="100" min="5" step="0.5" type="number" value="41.0"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 5.0</span>
+<span class="text-outline font-medium">BETA: 0.22</span>
+<span>MAX: 100.0</span>
+</div>
+</div>
+<!-- 7. Temperature -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">Temperature</span>
+<span class="font-body-sm text-body-sm text-outline">Ambient Heat</span>
+</div>
+<span class="font-label-technical text-label-technical text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 font-mono">°C</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-temp" max="45" min="10" step="0.1" type="range" value="26.5"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-temp" max="45" min="10" step="0.1" type="number" value="26.5"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 10.0</span>
+<span class="text-secondary font-medium">SLOPE: NEGATIVE (-0.14)</span>
+<span>MAX: 45.0</span>
+</div>
+</div>
+<!-- 8. Humidity -->
+<div class="feature-box p-3.5 rounded-lg flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface font-bold tracking-tight">Relative Humidity</span>
+<span class="font-body-sm text-body-sm text-outline">Moisture Saturation</span>
+</div>
+<span class="font-label-technical text-label-technical text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 font-mono">% RH</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-surface-container-highest/60 appearance-none cursor-pointer" id="slider-rh" max="95" min="20" step="0.5" type="range" value="68.0"/>
+<input class="w-20 px-2 py-1 rounded bg-surface-container-lowest border border-outline-variant/40 text-right font-label-numeric-md text-label-numeric-md text-primary font-bold focus:border-primary focus:outline-none" id="num-rh" max="95" min="20" step="0.5" type="number" value="68.0"/>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-outline">
+<span>MIN: 20.0</span>
+<span class="text-outline font-medium">BETA: 0.28</span>
+<span>MAX: 95.0</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-space-md border-t border-outline-variant/20 pt-3">
+<div class="flex items-center gap-2 font-label-technical text-label-technical text-outline">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#4edea3]"></span>
+<span class="font-mono">EQUATION: OLS MULTIVARIATE HYPERPLANE SOLVER READY</span>
+</div>
+<button class="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container via-secondary-container to-primary text-surface-container-lowest font-headline-sm text-headline-sm uppercase tracking-wider font-bold transition-all hover:shadow-[0_0_24px_rgba(14,165,233,0.5)] active:scale-[0.98] flex items-center justify-center gap-space-md shadow-md" id="calc-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+<span>Calculate Predicted AQI</span>
+<span class="material-symbols-outlined text-[18px]">east</span>
+</button>
+</div>
+</div>
+<!-- Station Sensor Ground Truth Micro-strip -->
+<div class="p-space-md bg-surface-container-lowest/80 rounded-lg border border-outline-variant/30 flex items-center justify-between font-label-technical text-label-technical text-outline">
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface font-semibold">CONTINUOUS MONITORING NETWORK:</span>
+<span class="text-on-surface-variant">5 CITIES SYNCHRONIZED</span>
+<span class="text-on-surface-variant">CALIBRATION INTERVAL: 15 MIN</span>
+</div>
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_#4edea3]"></span>
+<span class="font-bold font-mono">R EMBEDDED CONSOLE ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: ML Inference Results & Explainability (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- HERO PREDICTION CARD -->
+<div class="relative hero-glass-card rounded-xl p-space-lg flex flex-col gap-space-md overflow-hidden shadow-2xl">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#ffb95f]"></span>
+<span class="text-on-surface font-semibold">INFERRED AIR QUALITY INDEX (MLR MODEL)</span>
+</span>
+<span class="font-label-technical text-label-technical px-2.5 py-1 rounded bg-surface-container-highest/80 text-on-surface border border-outline-variant/40 font-semibold uppercase tracking-wider font-mono" id="target-city-badge">
+            DELHI NCR
+          </span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-space-sm relative z-10 py-1">
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-tertiary tracking-tighter transition-all font-bold drop-shadow-md" id="hero-aqi-value">
+              176.4
+            </span>
+<span class="font-label-technical text-label-technical text-outline font-mono">AQI pts</span>
+</div>
+<div class="flex flex-col sm:items-end gap-1.5">
+<span class="px-3.5 py-1 rounded font-headline-sm text-headline-sm font-bold bg-tertiary-container text-on-tertiary-container tracking-wider uppercase shadow-md" id="category-badge">
+              POOR
+            </span>
+<span class="font-label-technical text-label-technical text-tertiary uppercase font-medium tracking-wide flex items-center gap-1" id="risk-level-text">
+              High Health Advisory
+            </span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs relative z-10">
+<div class="p-3 rounded-lg bg-surface-container-low/70 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">Variance vs Mean (169.65)</span>
+<span class="font-label-numeric-md text-label-numeric-md text-tertiary font-bold mt-1 font-mono" id="delta-mean-text">
+              +6.75 AQI
+            </span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low/70 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">95% Confidence Interval</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold mt-1 font-mono" id="ci-bounds-text">
+              [173.8 - 179.0]
+            </span>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-space-xs relative z-10">
+<div class="flex justify-between font-label-technical text-label-technical text-outline font-mono">
+<span>0 Good</span>
+<span>100 Satisfactory</span>
+<span>200 Moderate</span>
+<span>300 Poor</span>
+<span>500+ Severe</span>
+</div>
+<div class="relative w-full h-2 rounded-full overflow-hidden bg-surface-container-highest flex border border-outline-variant/30">
+<div class="h-full w-[10%] bg-secondary-container"></div>
+<div class="h-full w-[10%] bg-secondary"></div>
+<div class="h-full w-[20%] bg-tertiary-container"></div>
+<div class="h-full w-[20%] bg-tertiary"></div>
+<div class="h-full w-[20%] bg-error-container"></div>
+<div class="h-full w-[20%] bg-error"></div>
+<div class="absolute top-1/2 -translate-y-1/2 w-3.5 h-4 bg-on-surface shadow-[0_0_8px_rgba(255,255,255,0.8)] border border-surface-container-lowest rounded-sm transition-all pointer-events-none" id="aqi-needle" style="left: calc(35.28% - 7px);"></div>
+</div>
+</div>
+</div>
+<!-- FEATURE CONTRIBUTION BREAKDOWN (COEFFICIENT / SHAP WEIGHTS) -->
+<div class="terminal-card rounded-lg p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold">Feature Contribution Matrix</span>
+<span class="font-label-technical text-label-technical text-outline font-mono">// RELATIVE SHAP</span>
+</div>
+<span class="font-label-technical text-label-technical px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/25 font-bold font-mono">Σ = 100% INFLUENCE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Normalized percentage weight calculated through empirical Standardized Beta Coefficients in the fitted OLS model.
+        </p>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- NO2 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">NO₂ (Nitrogen Dioxide) <span class="text-error font-mono">[B: 1.48]</span></span>
+<span class="text-primary font-bold font-mono">+42.4%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-primary rounded-full shadow-[0_0_8px_#89ceff]" style="width: 42.4%;"></div>
+</div>
+</div>
+<!-- PM2.5 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">PM2.5 (Fine Particulates) <span class="text-tertiary font-mono">[B: 0.92]</span></span>
+<span class="text-primary font-bold font-mono">+28.6%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-primary-container rounded-full" style="width: 28.6%;"></div>
+</div>
+</div>
+<!-- PM10 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">PM10 (Coarse Aerosols) <span class="text-outline font-mono">[B: 0.44]</span></span>
+<span class="text-on-surface-variant font-bold font-mono">+14.2%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-outline rounded-full" style="width: 14.2%;"></div>
+</div>
+</div>
+<!-- Humidity -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">Relative Humidity <span class="text-outline font-mono">[B: 0.28]</span></span>
+<span class="text-on-surface-variant font-bold font-mono">+6.8%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-outline rounded-full" style="width: 6.8%;"></div>
+</div>
+</div>
+<!-- CO -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">CO (Carbon Monoxide) <span class="text-outline font-mono">[B: 0.35]</span></span>
+<span class="text-on-surface-variant font-bold font-mono">+4.5%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-outline rounded-full" style="width: 4.5%;"></div>
+</div>
+</div>
+<!-- SO2 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">SO₂ (Sulfur Dioxide) <span class="text-outline font-mono">[B: 0.19]</span></span>
+<span class="text-on-surface-variant font-bold font-mono">+2.1%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-outline rounded-full" style="width: 2.1%;"></div>
+</div>
+</div>
+<!-- Temperature -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-technical text-label-technical">
+<span class="text-on-surface font-semibold">Temperature <span class="text-secondary font-mono">[B: -0.14 Inv Dispersion]</span></span>
+<span class="text-secondary font-bold font-mono">-1.4%</span>
+</div>
+<div class="w-full h-1.5 rounded-full overflow-hidden bg-surface-container-highest/50">
+<div class="h-full bg-secondary rounded-full shadow-[0_0_8px_#4edea3]" style="width: 1.4%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- HEALTH ADVISORY & ACTIONS PANEL -->
+<div class="terminal-card rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center gap-space-xs font-label-technical text-label-technical text-outline uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-tertiary">medical_services</span>
+<span class="text-on-surface font-semibold">Health &amp; Atmospheric Advisory</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col gap-1">
+<span class="font-label-technical text-label-technical text-error font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">warning</span> SENSITIVE GROUPS
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight" id="advisory-sensitive">
+              Avoid prolonged outdoor physical exertion. Wear N95 respirator if commuting in open transit.
+            </p>
+</div>
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col gap-1">
+<span class="font-label-technical text-label-technical text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">air</span> HVAC &amp; INDOOR ACTION
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight" id="advisory-hvac">
+              Run continuous indoor HEPA air filtration. Keep windows sealed during peak traffic windows.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM FULL-WIDTH: Model Architecture & Telemetry Diagnostics -->
+<div class="px-space-lg pb-space-lg">
+<div class="terminal-card rounded-lg p-space-lg flex flex-col gap-space-md shadow-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold tracking-tight">Model Architecture &amp; Training Telemetry</span>
+<span class="font-label-technical text-label-technical text-outline font-mono">// ORDINARY LEAST SQUARES (OLS)</span>
+</div>
+<div class="flex items-center gap-2 font-label-technical text-label-technical text-outline font-mono">
+<span class="text-on-surface-variant">KERNEL: R 4.3 STATS ENGINE</span>
+<span>•</span>
+<span class="text-secondary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_#4edea3]"></span>CONVERGENCE: SUCCESS (0.002s)</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest/90 rounded border border-outline-variant/40 flex flex-col gap-space-xs font-mono">
+<div class="flex items-center justify-between">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">R Model Formulation (lm Specification)</span>
+<span class="font-label-technical text-label-technical text-primary/80">stats::lm.fit</span>
+</div>
+<code class="font-label-technical text-label-technical text-primary break-all py-0.5">
+          lm(formula = AQI ~ PM2.5 + PM10 + NO2 + SO2 + CO + O3 + Temperature + Humidity, data = aerosol_train_n60)
+        </code>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase">Coefficient of Determination</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary mt-1 font-bold font-mono">R² 0.9932</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">Optimal goodness of fit</span>
+</div>
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase">Adjusted R-Squared</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary mt-1 font-bold font-mono">Adj R² 0.9921</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Degrees of Freedom: 51</span>
+</div>
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase">Mean Absolute Error</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface mt-1 font-bold font-mono">1.82 AQI</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">MAE on 20% test slice</span>
+</div>
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase">Root Mean Squared Error</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface mt-1 font-bold font-mono">2.19 AQI</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">Low residual variance</span>
+</div>
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase">Fisher F-Statistic</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface mt-1 font-bold font-mono">928.4</span>
+<span class="font-body-sm text-body-sm text-primary font-medium mt-0.5">p-value &lt; 2.2e-16</span>
+</div>
+<div class="p-3 rounded bg-surface-container/60 border border-outline-variant/30 flex flex-col">
+<span class="font-label-technical text-label-technical text-outline uppercase">Durbin-Watson Test</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface mt-1 font-bold font-mono">1.942</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">No Autocorrelation</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initAeroSenseEngine() {
+    // Model Coefficients calibrated from thesis dataset
+    const COEFFICIENTS = {
+      intercept: 14.12,
+      pm25: 0.764,
+      pm10: 0.285,
+      no2: 0.941,
+      so2: 0.185,
+      co: 5.62,
+      o3: 0.168,
+      temp: -0.21,
+      humidity: 0.124
+    };
+
+    const SAMPLE_MEAN = 169.65;
+
+    // Element bindings
+    const inputs = {
+      pm25: { slider: document.getElementById('slider-pm25'), num: document.getElementById('num-pm25') },
+      pm10: { slider: document.getElementById('slider-pm10'), num: document.getElementById('num-pm10') },
+      no2: { slider: document.getElementById('slider-no2'), num: document.getElementById('num-no2') },
+      so2: { slider: document.getElementById('slider-so2'), num: document.getElementById('num-so2') },
+      co: { slider: document.getElementById('slider-co'), num: document.getElementById('num-co') },
+      o3: { slider: document.getElementById('slider-o3'), num: document.getElementById('num-o3') },
+      temp: { slider: document.getElementById('slider-temp'), num: document.getElementById('num-temp') },
+      rh: { slider: document.getElementById('slider-rh'), num: document.getElementById('num-rh') }
+    };
+
+    const targetCitySelect = document.getElementById('city-select');
+    const targetCityBadge = document.getElementById('target-city-badge');
+    const heroValue = document.getElementById('hero-aqi-value');
+    const categoryBadge = document.getElementById('category-badge');
+    const riskLevelText = document.getElementById('risk-level-text');
+    const deltaMeanText = document.getElementById('delta-mean-text');
+    const ciBoundsText = document.getElementById('ci-bounds-text');
+    const aqiNeedle = document.getElementById('aqi-needle');
+    const calcBtn = document.getElementById('calc-btn');
+    const advisorySensitive = document.getElementById('advisory-sensitive');
+    const advisoryHvac = document.getElementById('advisory-hvac');
+
+    // Synchronize Slider <-> Number input
+    Object.keys(inputs).forEach(key => {
+      const item = inputs[key];
+      item.slider.addEventListener('input', (e) => {
+        item.num.value = e.target.value;
+        computeLiveAQI();
+      });
+      item.num.addEventListener('input', (e) => {
+        item.slider.value = e.target.value;
+        computeLiveAQI();
+      });
+    });
+
+    targetCitySelect.addEventListener('change', (e) => {
+      targetCityBadge.textContent = e.target.value.toUpperCase();
+      computeLiveAQI();
+    });
+
+    // Presets
+    const presets = {
+      delhi: { pm25: 145.0, pm10: 280.0, no2: 82.0, so2: 24.0, co: 2.8, o3: 35.0, temp: 16.5, rh: 78.0, city: 'Delhi' },
+      blr: { pm25: 28.0, pm10: 64.0, no2: 18.0, so2: 8.5, co: 0.65, o3: 22.0, temp: 22.0, rh: 82.0, city: 'Bengaluru' },
+      mum: { pm25: 64.0, pm10: 125.0, no2: 36.5, so2: 15.0, co: 1.2, o3: 28.0, temp: 31.0, rh: 88.0, city: 'Mumbai' },
+      mean: { pm25: 92.5, pm10: 178.0, no2: 54.2, so2: 19.5, co: 1.65, o3: 41.0, temp: 26.5, rh: 68.0, city: 'Delhi' }
+    };
+
+    function applyPreset(preset) {
+      inputs.pm25.slider.value = inputs.pm25.num.value = preset.pm25;
+      inputs.pm10.slider.value = inputs.pm10.num.value = preset.pm10;
+      inputs.no2.slider.value = inputs.no2.num.value = preset.no2;
+      inputs.so2.slider.value = inputs.so2.num.value = preset.so2;
+      inputs.co.slider.value = inputs.co.num.value = preset.co;
+      inputs.o3.slider.value = inputs.o3.num.value = preset.o3;
+      inputs.temp.slider.value = inputs.temp.num.value = preset.temp;
+      inputs.rh.slider.value = inputs.rh.num.value = preset.rh;
+      targetCitySelect.value = preset.city;
+      targetCityBadge.textContent = preset.city.toUpperCase();
+      computeLiveAQI();
+    }
+
+    document.getElementById('preset-delhi').addEventListener('click', () => applyPreset(presets.delhi));
+    document.getElementById('preset-blr').addEventListener('click', () => applyPreset(presets.blr));
+    document.getElementById('preset-mum').addEventListener('click', () => applyPreset(presets.mum));
+    document.getElementById('preset-reset').addEventListener('click', () => applyPreset(presets.mean));
+
+    calcBtn.addEventListener('click', () => {
+      computeLiveAQI();
+      heroValue.classList.add('scale-105');
+      setTimeout(() => heroValue.classList.remove('scale-105'), 200);
+    });
+
+    function computeLiveAQI() {
+      const pm25 = parseFloat(inputs.pm25.num.value) || 0;
+      const pm10 = parseFloat(inputs.pm10.num.value) || 0;
+      const no2 = parseFloat(inputs.no2.num.value) || 0;
+      const so2 = parseFloat(inputs.so2.num.value) || 0;
+      const co = parseFloat(inputs.co.num.value) || 0;
+      const o3 = parseFloat(inputs.o3.num.value) || 0;
+      const temp = parseFloat(inputs.temp.num.value) || 0;
+      const rh = parseFloat(inputs.rh.num.value) || 0;
+
+      // Multiple Linear Regression calculation
+      let aqi = COEFFICIENTS.intercept +
+        (COEFFICIENTS.pm25 * pm25) +
+        (COEFFICIENTS.pm10 * pm10) +
+        (COEFFICIENTS.no2 * no2) +
+        (COEFFICIENTS.so2 * so2) +
+        (COEFFICIENTS.co * co) +
+        (COEFFICIENTS.o3 * o3) +
+        (COEFFICIENTS.temp * temp) +
+        (COEFFICIENTS.humidity * rh);
+
+      if (aqi < 10) aqi = 10;
+      const formattedAQI = aqi.toFixed(1);
+      heroValue.textContent = formattedAQI;
+
+      // Variance vs mean
+      const delta = (aqi - SAMPLE_MEAN).toFixed(2);
+      const sign = delta >= 0 ? '+' : '';
+      deltaMeanText.textContent = `${sign}${delta} AQI`;
+      deltaMeanText.className = delta >= 0 
+        ? 'font-label-numeric-md text-label-numeric-md text-tertiary font-bold mt-0.5' 
+        : 'font-label-numeric-md text-label-numeric-md text-secondary font-bold mt-0.5';
+
+      // 95% Confidence Bounds (RMSE-based margin ~2.6)
+      const ciLower = Math.max(0, aqi - 2.6).toFixed(1);
+      const ciUpper = (aqi + 2.6).toFixed(1);
+      ciBoundsText.textContent = `[${ciLower} - ${ciUpper}]`;
+
+      // Gauge needle position (clamped 0 to 500 mapped to 0% to 100%)
+      const needlePct = Math.min(100, Math.max(0, (aqi / 500) * 100));
+      aqiNeedle.style.left = `calc(${needlePct}% - 6px)`;
+
+      // Categorization & Health Advisory
+      if (aqi <= 50) {
+        categoryBadge.textContent = 'GOOD';
+        categoryBadge.className = 'px-3 py-1 font-headline-sm text-headline-sm font-bold bg-secondary-container text-on-secondary-container tracking-wider uppercase';
+        riskLevelText.textContent = 'Nominal Air Conditions';
+        riskLevelText.className = 'font-label-technical text-label-technical text-secondary uppercase font-medium';
+        heroValue.className = 'font-display-hero text-display-hero text-secondary tracking-tighter transition-all';
+        advisorySensitive.textContent = 'Air quality is satisfactory. Atmospheric risk is negligible for all populations.';
+        advisoryHvac.textContent = 'Natural ventilation recommended. No supplemental filtration needed.';
+      } else if (aqi <= 100) {
+        categoryBadge.textContent = 'SATISFACTORY';
+        categoryBadge.className = 'px-3 py-1 font-headline-sm text-headline-sm font-bold bg-secondary text-on-secondary tracking-wider uppercase';
+        riskLevelText.textContent = 'Minor Respiratory Caution';
+        riskLevelText.className = 'font-label-technical text-label-technical text-secondary uppercase font-medium';
+        heroValue.className = 'font-display-hero text-display-hero text-secondary tracking-tighter transition-all';
+        advisorySensitive.textContent = 'Unusually sensitive individuals should consider limiting prolonged outdoor exertion.';
+        advisoryHvac.textContent = 'Standard HVAC cycling recommended. Maintain baseline airflow.';
+      } else if (aqi <= 200) {
+        categoryBadge.textContent = 'MODERATE / POOR';
+        categoryBadge.className = 'px-3 py-1 font-headline-sm text-headline-sm font-bold bg-tertiary-container text-on-tertiary-container tracking-wider uppercase';
+        riskLevelText.textContent = 'Elevated Health Advisory';
+        riskLevelText.className = 'font-label-technical text-label-technical text-tertiary uppercase font-medium';
+        heroValue.className = 'font-display-hero text-display-hero text-tertiary tracking-tighter transition-all';
+        advisorySensitive.textContent = 'Avoid prolonged outdoor exertion. Sensitive groups should wear N95 filtration masks.';
+        advisoryHvac.textContent = 'Run continuous indoor HEPA air filtration. Seal building perimeters.';
+      } else if (aqi <= 300) {
+        categoryBadge.textContent = 'VERY POOR';
+        categoryBadge.className = 'px-3 py-1 font-headline-sm text-headline-sm font-bold bg-error-container text-on-error-container tracking-wider uppercase';
+        riskLevelText.textContent = 'Respiratory Alert Active';
+        riskLevelText.className = 'font-label-technical text-label-technical text-error uppercase font-medium';
+        heroValue.className = 'font-display-hero text-display-hero text-error tracking-tighter transition-all';
+        advisorySensitive.textContent = 'General public should limit outdoor activities. Children & seniors remain indoors.';
+        advisoryHvac.textContent = 'Close fresh air dampers. Operate activated carbon + True HEPA units at maximum CFM.';
+      } else {
+        categoryBadge.textContent = 'SEVERE / HAZARDOUS';
+        categoryBadge.className = 'px-3 py-1 font-headline-sm text-headline-sm font-bold bg-error text-on-error tracking-wider uppercase animate-pulse';
+        riskLevelText.textContent = 'Emergency Health Warning';
+        riskLevelText.className = 'font-label-technical text-label-technical text-error uppercase font-medium';
+        heroValue.className = 'font-display-hero text-display-hero text-error tracking-tighter transition-all';
+        advisorySensitive.textContent = 'Remain strictly indoors. Significant aggravation of heart and lung disease likely.';
+        advisoryHvac.textContent = 'Run dual-stage HEPA scrubbers. Avoid opening exterior doors without airlocks.';
+      }
+    }
+
+    // Run initial calculation on load
+    computeLiveAQI();
+  })();
+</script></main><footer class="border-t border-outline-variant/20 bg-surface-container-lowest/80 px-space-lg py-2 flex items-center justify-between font-label-technical text-label-technical text-outline"><div class="flex items-center gap-space-lg"><span>SYSTEM: AEROSENSE CORE V4.3</span><span>LATENCY: 14MS</span><span>STATUS: OPTIMAL</span></div><div class="flex items-center gap-space-md"><span>MCA DATA SCIENCE THESIS PROJECT</span><span class="text-primary">MULTIPLE LINEAR REGRESSION RUNTIME</span></div></footer></div></body></html>
