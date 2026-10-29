@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # AeroSense - Air Quality Intelligence & Prediction Platform
 # Shiny dashboard built from the approved Stitch design direction.
 # ============================================================
@@ -64,7 +64,7 @@ category_color <- function(category) {
     "Poor" = "#F59E0B",
     "Very Poor" = "#F97316",
     "Severe" = "#EF4444",
-    "#10B981"
+    "#2563EB"
   )
 }
 
@@ -104,13 +104,13 @@ sidebar_ui <- function() {
     div(class = "sidebar-bottom",
       div(class = "nav-caption", "PROJECT"),
       actionButton("nav_about", "About Project", class = "nav-btn"),
-      div(class = "sidebar-foot", "ACADEMIC DATASET • NOT REAL-TIME")
+      div(class = "sidebar-foot", "ACADEMIC DATASET â€¢ NOT REAL-TIME")
     )
   )
 }
 
 ui <- fluidPage(
-  theme = bs_theme(version = 5, bootswatch = "darkly", primary = "#10B981", bg = "#0F172A", fg = "#E2E8F0"),
+  theme = bs_theme(version = 5, bootswatch = "darkly", primary = "#2563EB", bg = "#EAF3FF", fg = "#172554"),
   tags$head(
     tags$meta(name = "viewport", content = "width=device-width, initial-scale=1"),
     tags$link(rel = "preconnect", href = "https://fonts.googleapis.com"),
@@ -166,9 +166,9 @@ server <- function(input, output, session) {
           kpi_card("AVERAGE AQI", fmt(avg_aqi), "75-record aggregate", "tertiary", "POOR"),
           kpi_card("MAXIMUM AQI", fmt(max_aqi), "Peak observed reading", "error", "VERY POOR"),
           kpi_card("MINIMUM AQI", fmt(min_aqi), paste(lowest_city, "Eco-Zone"), "secondary", "LOWEST"),
-          kpi_card("RISK EPICENTER", highest_city, paste0("μ = ", fmt(city_avg$AQI[1]), " AQI"), "error", "CRITICAL"),
+          kpi_card("RISK EPICENTER", highest_city, paste0("Î¼ = ", fmt(city_avg$AQI[1]), " AQI"), "error", "CRITICAL"),
           kpi_card("PRIMARY DRIVER", strongest_factor, paste0("Pearson r = +", fmt(strongest_corr, 3)), "primary", "ML VECTOR"),
-          kpi_card("MLR FIT (R²)", paste0(fmt(r_squared * 100, 2), "%"), paste0("RMSE: ", fmt(rmse), " | MAE: ", fmt(mae)), "secondary", "HIGH CERTAINTY")
+          kpi_card("MLR FIT (RÂ²)", paste0(fmt(r_squared * 100, 2), "%"), paste0("RMSE: ", fmt(rmse), " | MAE: ", fmt(mae)), "secondary", "HIGH CERTAINTY")
         ),
         div(class = "analytics-grid",
           panel_box("Aggregate AQI", "IND-AQI STANDARD",
@@ -176,7 +176,7 @@ server <- function(input, output, session) {
               plotlyOutput("overview_gauge", height = "300px")
             ),
             div(class = "aqi-scale",
-              span(class = "good", "GOOD 0–50"), span(class = "moderate", "MOD 51–100"), span(class = "poor", "POOR 101–200"), span(class = "verypoor", "V.POOR 201–300"), span(class = "severe", "SEVERE 301+")
+              span(class = "good", "GOOD 0â€“50"), span(class = "moderate", "MOD 51â€“100"), span(class = "poor", "POOR 101â€“200"), span(class = "verypoor", "V.POOR 201â€“300"), span(class = "severe", "SEVERE 301+")
             ),
             div(class = "advisory", strong("Health Advisory"), p(paste0("The dataset-wide mean AQI is ", fmt(avg_aqi), " (", assign_aqi_category(avg_aqi), "). ",
               if (avg_aqi > 100) "Sensitive groups should consider limiting prolonged outdoor exertion." else "Check local conditions before making outdoor activity decisions.")))
@@ -212,7 +212,7 @@ server <- function(input, output, session) {
               numericInput("pm25", "PM2.5", 120, min = 0), numericInput("pm10", "PM10", 175, min = 0),
               numericInput("no2", "NO2", 80, min = 0), numericInput("so2", "SO2", 40, min = 0),
               numericInput("co", "CO", 1.2, min = 0), numericInput("o3", "O3", 45, min = 0),
-              numericInput("temperature", "Temperature °C", 20, min = -50), numericInput("humidity", "Humidity %", 50, min = 0, max = 100)
+              numericInput("temperature", "Temperature Â°C", 20, min = -50), numericInput("humidity", "Humidity %", 50, min = 0, max = 100)
             ),
             actionButton("predict", "RUN AQI PREDICTION", class = "predict-btn")
           ),
@@ -223,12 +223,12 @@ server <- function(input, output, session) {
     } else if (page == "Data Explorer") {
       tagList(
         div(class = "section-intro", h2("Data Explorer"), p("Browse the cleaned academic dataset used by the dashboard.")),
-        panel_box("Air Quality Dataset", paste(nrow(data), "rows ×", ncol(data), "variables"), DTOutput("data_table"))
+        panel_box("Air Quality Dataset", paste(nrow(data), "rows Ã—", ncol(data), "variables"), DTOutput("data_table"))
       )
     } else if (page == "Model Performance") {
       tagList(
-        div(class = "kpi-grid model-kpis", kpi_card("MAE", fmt(mae), "Mean absolute error", "primary"), kpi_card("RMSE", fmt(rmse), "Root mean squared error", "tertiary"), kpi_card("R²", fmt(r_squared, 4), "Training fit", "secondary"), kpi_card("TEST ROWS", nrow(test_data), "20% holdout", "primary")),
-        div(class = "two-col-grid", panel_box("Actual vs Predicted", "TEST SET", plotlyOutput("actual_predicted", height = "390px")), panel_box("Residual Diagnostics", "ACTUAL − PREDICTED", plotlyOutput("residual_plot", height = "390px"))),
+        div(class = "kpi-grid model-kpis", kpi_card("MAE", fmt(mae), "Mean absolute error", "primary"), kpi_card("RMSE", fmt(rmse), "Root mean squared error", "tertiary"), kpi_card("RÂ²", fmt(r_squared, 4), "Training fit", "secondary"), kpi_card("TEST ROWS", nrow(test_data), "20% holdout", "primary")),
+        div(class = "two-col-grid", panel_box("Actual vs Predicted", "TEST SET", plotlyOutput("actual_predicted", height = "390px")), panel_box("Residual Diagnostics", "ACTUAL âˆ’ PREDICTED", plotlyOutput("residual_plot", height = "390px"))),
         panel_box("Model Summary", "MULTIPLE LINEAR REGRESSION", DTOutput("model_table"))
       )
     } else if (page == "Insights") {
@@ -238,7 +238,7 @@ server <- function(input, output, session) {
           div(class = "insight-card", span("01"), h3("Highest Risk City"), strong(highest_city), p(paste0("Average AQI of ", fmt(city_avg$AQI[1]), "."))),
           div(class = "insight-card", span("02"), h3("Lowest Risk City"), strong(lowest_city), p(paste0("Average AQI of ", fmt(city_avg$AQI[nrow(city_avg)]), "."))),
           div(class = "insight-card", span("03"), h3("Dominant AQI Factor"), strong(strongest_factor), p(paste0("Pearson correlation = ", fmt(strongest_corr, 3), "."))),
-          div(class = "insight-card", span("04"), h3("Model Reliability"), strong(paste0(fmt(r_squared * 100, 2), "% R²")), p("R² is calculated on the training split; review the held-out MAE and RMSE before judging generalisation. Results are based on a small academic dataset."))
+          div(class = "insight-card", span("04"), h3("Model Reliability"), strong(paste0(fmt(r_squared * 100, 2), "% RÂ²")), p("RÂ² is calculated on the training split; review the held-out MAE and RMSE before judging generalisation. Results are based on a small academic dataset."))
         )
       )
     } else {
@@ -258,30 +258,30 @@ server <- function(input, output, session) {
 
   output$overview_gauge <- renderPlotly({
     plot_ly(type = "indicator", mode = "gauge+number", value = avg_aqi,
-      number = list(font = list(size = 46, color = "#E2E8F0"), suffix = " AQI"),
+      number = list(font = list(size = 46, color = "#172554"), suffix = " AQI"),
       gauge = list(axis = list(range = list(0, 500), tickcolor = "#64748B"),
         bar = list(color = category_color(assign_aqi_category(avg_aqi))),
-        bgcolor = "#0F172A", borderwidth = 1, bordercolor = "#334155",
+        bgcolor = "#EAF3FF", borderwidth = 1, bordercolor = "#BFDBFE",
         steps = list(
           list(range = c(0, 50), color = "#16351F"), list(range = c(50, 100), color = "#263D18"),
           list(range = c(100, 200), color = "#3B2D0A"), list(range = c(200, 300), color = "#3C2110"), list(range = c(300, 500), color = "#3A151A")
         )
-      )) %>% layout(paper_bgcolor = "rgba(0,0,0,0)", font = list(color = "#E2E8F0"), margin = list(l = 20, r = 20, t = 20, b = 20))
+      )) %>% layout(paper_bgcolor = "rgba(0,0,0,0)", font = list(color = "#172554"), margin = list(l = 20, r = 20, t = 20, b = 20))
   })
 
   output$overview_trend <- renderPlotly({
-    p <- plot_ly(data, x = ~Date, y = ~AQI, type = "scatter", mode = "lines+markers", line = list(color = "#10B981", width = 2), marker = list(size = 5, color = "#10B981"))
-    p %>% layout(xaxis = list(title = "", gridcolor = "#334155"), yaxis = list(title = "AQI", gridcolor = "#334155"), shapes = list(list(type = "line", x0 = min(data$Date), x1 = max(data$Date), y0 = 100, y1 = 100, line = list(color = "#10B981", dash = "dash"))), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"), margin = list(l = 45, r = 15, t = 10, b = 40))
+    p <- plot_ly(data, x = ~Date, y = ~AQI, type = "scatter", mode = "lines+markers", line = list(color = "#2563EB", width = 2), marker = list(size = 5, color = "#2563EB"))
+    p %>% layout(xaxis = list(title = "", gridcolor = "#BFDBFE"), yaxis = list(title = "AQI", gridcolor = "#BFDBFE"), shapes = list(list(type = "line", x0 = min(data$Date), x1 = max(data$Date), y0 = 100, y1 = 100, line = list(color = "#2563EB", dash = "dash"))), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"), margin = list(l = 45, r = 15, t = 10, b = 40))
   })
 
   output$city_bar <- renderPlotly({
-    plot_ly(city_avg, x = ~AQI, y = ~reorder(City, AQI), type = "bar", orientation = "h", marker = list(color = "#10B981")) %>% layout(xaxis = list(title = "Average AQI", gridcolor = "#334155"), yaxis = list(title = ""), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"), margin = list(l = 85, r = 20, t = 10, b = 40))
+    plot_ly(city_avg, x = ~AQI, y = ~reorder(City, AQI), type = "bar", orientation = "h", marker = list(color = "#2563EB")) %>% layout(xaxis = list(title = "Average AQI", gridcolor = "#BFDBFE"), yaxis = list(title = ""), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"), margin = list(l = 85, r = 20, t = 10, b = 40))
   })
 
   output$pollutant_bar <- renderPlotly({
     means <- colMeans(data[, features])
     dd <- data.frame(Pollutant = names(means), Mean = as.numeric(means))
-    plot_ly(dd, x = ~Pollutant, y = ~Mean, type = "bar", marker = list(color = "#10B981")) %>% layout(xaxis = list(title = "", tickangle = -35), yaxis = list(title = "Mean level", gridcolor = "#334155"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"), margin = list(l = 45, r = 15, t = 10, b = 70))
+    plot_ly(dd, x = ~Pollutant, y = ~Mean, type = "bar", marker = list(color = "#2563EB")) %>% layout(xaxis = list(title = "", tickangle = -35), yaxis = list(title = "Mean level", gridcolor = "#BFDBFE"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"), margin = list(l = 45, r = 15, t = 10, b = 70))
   })
 
   output$city_table <- renderDT({
@@ -291,12 +291,12 @@ server <- function(input, output, session) {
   output$city_trend <- renderPlotly({
     req(input$city_filter)
     dd <- data %>% filter(City == input$city_filter)
-    plot_ly(dd, x = ~Date, y = ~AQI, type = "scatter", mode = "lines+markers", line = list(color = "#10B981", width = 2)) %>% layout(xaxis = list(title = "", gridcolor = "#334155"), yaxis = list(title = "AQI", gridcolor = "#334155"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"))
+    plot_ly(dd, x = ~Date, y = ~AQI, type = "scatter", mode = "lines+markers", line = list(color = "#2563EB", width = 2)) %>% layout(xaxis = list(title = "", gridcolor = "#BFDBFE"), yaxis = list(title = "AQI", gridcolor = "#BFDBFE"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"))
   })
 
   output$heatmap <- renderPlotly({
     m <- cor_matrix
-    plot_ly(x = colnames(m), y = colnames(m), z = m, type = "heatmap", colors = c("#EF4444", "#0F172A", "#10B981"), zmin = -1, zmax = 1) %>% layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"), margin = list(l = 90, r = 20, t = 20, b = 90))
+    plot_ly(x = colnames(m), y = colnames(m), z = m, type = "heatmap", colors = c("#EF4444", "#EAF3FF", "#2563EB"), zmin = -1, zmax = 1) %>% layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"), margin = list(l = 90, r = 20, t = 20, b = 90))
   })
 
   output$correlation_table <- renderDT({
@@ -330,7 +330,7 @@ server <- function(input, output, session) {
     value <- prediction_value()
     if (is.null(value)) value <- avg_aqi
     catg <- assign_aqi_category(value)
-    plot_ly(type = "indicator", mode = "gauge+number", value = value, number = list(font = list(size = 42, color = "#E2E8F0")), gauge = list(axis = list(range = list(0, 500)), bar = list(color = category_color(catg)), bgcolor = "#0F172A", bordercolor = "#334155")) %>% layout(paper_bgcolor = "rgba(0,0,0,0)", margin = list(l = 25, r = 25, t = 10, b = 10))
+    plot_ly(type = "indicator", mode = "gauge+number", value = value, number = list(font = list(size = 42, color = "#172554")), gauge = list(axis = list(range = list(0, 500)), bar = list(color = category_color(catg)), bgcolor = "#EAF3FF", bordercolor = "#BFDBFE")) %>% layout(paper_bgcolor = "rgba(0,0,0,0)", margin = list(l = 25, r = 25, t = 10, b = 10))
   })
 
   output$model_spec <- renderDT({
@@ -342,12 +342,13 @@ server <- function(input, output, session) {
   })
 
   output$actual_predicted <- renderPlotly({
-    plot_ly(prediction_df, x = ~Actual, y = ~Predicted, type = "scatter", mode = "markers", marker = list(color = "#10B981", size = 9)) %>% add_lines(x = ~Actual, y = ~Actual, line = list(color = "#F59E0B", dash = "dash"), name = "Ideal") %>% layout(xaxis = list(title = "Actual AQI", gridcolor = "#334155"), yaxis = list(title = "Predicted AQI", gridcolor = "#334155"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"))
+    plot_ly(prediction_df, x = ~Actual, y = ~Predicted, type = "scatter", mode = "markers", marker = list(color = "#2563EB", size = 9)) %>% add_lines(x = ~Actual, y = ~Actual, line = list(color = "#F59E0B", dash = "dash"), name = "Ideal") %>% layout(xaxis = list(title = "Actual AQI", gridcolor = "#BFDBFE"), yaxis = list(title = "Predicted AQI", gridcolor = "#BFDBFE"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"))
   })
 
   output$residual_plot <- renderPlotly({
-    plot_ly(prediction_df, x = ~Predicted, y = ~Residual, type = "scatter", mode = "markers", marker = list(color = "#10B981", size = 9)) %>% add_lines(x = ~Predicted, y = 0, line = list(color = "#EF4444", dash = "dash"), name = "Zero") %>% layout(xaxis = list(title = "Predicted AQI", gridcolor = "#334155"), yaxis = list(title = "Residual", gridcolor = "#334155"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#CBD5E1"))
+    plot_ly(prediction_df, x = ~Predicted, y = ~Residual, type = "scatter", mode = "markers", marker = list(color = "#2563EB", size = 9)) %>% add_lines(x = ~Predicted, y = 0, line = list(color = "#EF4444", dash = "dash"), name = "Zero") %>% layout(xaxis = list(title = "Predicted AQI", gridcolor = "#BFDBFE"), yaxis = list(title = "Residual", gridcolor = "#BFDBFE"), paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)", font = list(color = "#526581"))
   })
 }
 
 shinyApp(ui, server)
+
